@@ -1,0 +1,107 @@
+[
+  {
+    "id": "API-01",
+    "timestamp_utc": "2026-10-18T05:05:13.684688+00:00",
+    "method": "GET",
+    "path": "/",
+    "status_code": 200,
+    "expected_status": 200,
+    "passed": true,
+    "selected_response": {
+      "platform": "DINIECO",
+      "status": "operational",
+      "version": "1.0.0"
+    }
+  },
+  {
+    "id": "API-02",
+    "timestamp_utc": "2026-10-18T05:05:13.749168+00:00",
+    "method": "GET",
+    "path": "/health",
+    "status_code": 200,
+    "expected_status": 200,
+    "passed": true,
+    "selected_response": {
+      "status": "healthy",
+      "database": "connected"
+    }
+  },
+  {
+    "id": "API-03",
+    "timestamp_utc": "2026-10-18T05:05:13.753508+00:00",
+    "method": "GET",
+    "path": "/api/v1/auth/me",
+    "status_code": 401,
+    "expected_status": 401,
+    "passed": true,
+    "selected_response": {
+      "detail": "Authentication credentials required"
+    }
+  },
+  {
+    "id": "API-04",
+    "timestamp_utc": "2026-10-18T05:05:13.779338+00:00",
+    "method": "POST",
+    "path": "/api/v1/auth/login",
+    "status_code": 401,
+    "expected_status": 401,
+    "passed": true,
+    "selected_response": {
+      "detail": "Incorrect email or password"
+    }
+  },
+  {
+    "id": "API-05",
+    "timestamp_utc": "2026-10-18T05:05:13.865476+00:00",
+    "method": "POST",
+    "path": "/api/v1/vision/analyze",
+    "status_code": 422,
+    "expected_status": 422,
+    "passed": true,
+    "selected_response": {
+      "detail": "Food weight must be greater than zero (received 0.0g net food)."
+    }
+  },
+  {
+    "id": "API-06",
+    "timestamp_utc": "2026-10-18T05:05:13.882794+00:00",
+    "method": "GET",
+    "path": "/api/v1/device/status",
+    "status_code": 200,
+    "expected_status": 200,
+    "passed": true,
+    "selected_response": {
+      "device_id": "DINIECO-PAD-001",
+      "is_connected": true,
+      "battery_percent": 94,
+      "load_sensor_status": "Active (HX711 24-bit)"
+    }
+  },
+  {
+    "id": "API-07",
+    "timestamp_utc": "2026-10-18T05:05:13.887666+00:00",
+    "method": "GET",
+    "path": "/api/v1/device/weight-stream",
+    "status_code": 200,
+    "expected_status": 200,
+    "passed": true,
+    "selected_response": {
+      "device_id": "DINIECO-PAD-001",
+      "weight_g": 0.0,
+      "unit": "g",
+      "is_stabilized": true
+    }
+  },
+  {
+    "id": "API-08",
+    "timestamp_utc": "2026-10-18T05:05:13.892248+00:00",
+    "method": "POST",
+    "path": "/api/v1/vision/upload",
+    "status_code": 401,
+    "expected_status": 401,
+    "passed": true,
+    "selected_response": {
+      "detail": "Authentication credentials required"
+    }
+  }
+]

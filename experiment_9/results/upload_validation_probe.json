@@ -1,0 +1,24 @@
+{
+  "missing_file": {
+    "status": 422,
+    "detail": [
+      {
+        "type": "missing",
+        "loc": [
+          "body",
+          "file"
+        ],
+        "msg": "Field required",
+        "input": null
+      }
+    ]
+  },
+  "unsupported_type": {
+    "status": 400,
+    "detail": "Unsupported image format: text/plain. Only JPEG, PNG, and WebP are supported."
+  },
+  "empty_jpeg": {
+    "status": 400,
+    "detail": "Uploaded file is empty"
+  }
+}

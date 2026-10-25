@@ -1,0 +1,26 @@
+{
+  "test_account": "synthetic local account; identifier and credentials omitted",
+  "registration_status": 200,
+  "browser_login": "PASS; dashboard displayed Start Meal Session",
+  "start_button_count": 2,
+  "active_session": "PASS; photo controls visible",
+  "initial_empty_state": true,
+  "gallery_button_count": 1,
+  "gallery_target": {
+    "x": 940,
+    "y": 373,
+    "rect": {
+      "height": 32,
+      "width": 611,
+      "x": 635,
+      "y": 357
+    }
+  },
+  "file_input_present": true,
+  "post_gallery_notice": false,
+  "photo_ui_text": [
+    "Retake Photo"
+  ],
+  "catalog_estimate_labeled": true,
+  "result_weight_visible": true
+}

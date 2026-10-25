@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DINIECO Mobile Home Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;family=Space+Grotesk:wght@500;600&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#29332c",
+                      "tertiary-fixed": "#dbe5db",
+                      "tertiary-fixed-dim": "#bfc9c0",
+                      "on-tertiary": "#ffffff",
+                      "surface-tint": "#296b3d",
+                      "inverse-primary": "#92d69e",
+                      "on-primary-fixed": "#00210b",
+                      "inverse-on-surface": "#e9f3e9",
+                      "surface-bright": "#f2fcf2",
+                      "on-primary-container": "#79bc86",
+                      "primary-container": "#004c22",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#e6f1e6",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#f2fcf2",
+                      "on-secondary-fixed-variant": "#304f00",
+                      "error-container": "#ffdad6",
+                      "outline": "#707970",
+                      "secondary-fixed": "#acf847",
+                      "on-error": "#ffffff",
+                      "tertiary": "#242d27",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed": "#102000",
+                      "background": "#f2fcf2",
+                      "surface-container-highest": "#dbe5db",
+                      "secondary-fixed-dim": "#91db2a",
+                      "surface-variant": "#dbe5db",
+                      "secondary-container": "#acf847",
+                      "outline-variant": "#c0c9be",
+                      "surface-dim": "#d2ddd3",
+                      "surface-container-high": "#e1ebe1",
+                      "on-surface": "#151e18",
+                      "tertiary-container": "#3a433c",
+                      "on-primary": "#ffffff",
+                      "primary": "#003315",
+                      "primary-fixed-dim": "#92d69e",
+                      "surface-container-low": "#ecf6ec",
+                      "on-surface-variant": "#404940",
+                      "on-secondary-container": "#457000",
+                      "on-tertiary-fixed": "#151e18",
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#adf3b8",
+                      "secondary": "#416900",
+                      "on-primary-fixed-variant": "#0a5227",
+                      "on-background": "#151e18",
+                      "on-tertiary-fixed-variant": "#404942",
+                      "on-tertiary-container": "#a5afa7"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "margin-desktop": "64px",
+                      "xl": "40px",
+                      "sm": "8px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "unit": "4px"
+              },
+              "fontFamily": {
+                      "body-sm": [
+                              "Work Sans", "sans-serif"
+                      ],
+                      "body-md": [
+                              "Work Sans", "sans-serif"
+                      ],
+                      "headline-lg": [
+                              "Manrope", "sans-serif"
+                      ],
+                      "data-label": [
+                              "Space Grotesk", "sans-serif"
+                      ],
+                      "headline-md": [
+                              "Manrope", "sans-serif"
+                      ],
+                      "headline-xl": [
+                              "Manrope", "sans-serif"
+                      ],
+                      "data-display": [
+                              "Space Grotesk", "sans-serif"
+                      ],
+                      "headline-lg-mobile": [
+                              "Manrope", "sans-serif"
+                      ],
+                      "body-lg": [
+                              "Work Sans", "sans-serif"
+                      ]
+              },
+              "fontSize": {
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "data-label": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "data-display": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.03em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid #e2e8f0;
+        }
+        .ambient-shadow:hover {
+            box-shadow: 0 8px 24px rgba(0, 76, 34, 0.06);
+        }
+        /* Hide scrollbar for clean mobile look */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md flex justify-between items-center px-margin-mobile h-16 w-full">
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A minimalist logo for DINIECO featuring a stylized, abstract leaf combined with a geometric smart pad shape, utilizing deep green and fresh lime colors, clean vector style, modern health-tech and food-tech corporate identity, soft lighting on a white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8SSYySvhmk6MNeaq7M5MSaBGHpdo8loPmMqewLCQRKUFvc6ztXlHKL6r4RH6QNvICibZrcrEr_R72EdYftImrPb067F3LG8fuRZBnB7-50No7rzyUcciYbZXB8Z6ob-QDBLn20ffq2bqmIyKP9nnOtO-DMpF1L_y5DiH0jCYWlT5oF3CU9ygJNP6XQiZ4q6PKdk_I9zwxxOIjKQBsgCXBaHlIVRNEac4_7OaKUnFdJLF7HO__TtV9Lse6PImD97UiL-w6D0o2IpBq"/>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">DINIECO</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hover:opacity-80 transition-opacity active:scale-95 duration-150 cursor-pointer">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2.5 h-2.5 bg-error rounded-full border-2 border-surface"></span>
+</div>
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant hover:opacity-80 transition-opacity active:scale-95 duration-150 cursor-pointer" data-alt="A high-quality professional portrait of a young South Asian man, smiling warmly, wearing a casual modern t-shirt, set against a soft, bright, slightly blurred natural outdoor background to imply a healthy, vital lifestyle, natural daylight, soft focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2wkbXZOfbURx9upymjLKbkIaC-HBwjKH-60bpzTAM7JxdFA3EWozr7cxzLPrNC4LOlDFTe0skXncgbyXope2eclKUUvKmGp5b0h3KiZ2CSw28yc4OLhMPBy_1B3c9HLQ_XRnv1MackpSAhNlQGxy7oP8nGskmyfFX6TT8275mNw2-7LHTWzIn6Yb6fodR45jUKhrYJ7OqwAkOFrtiOAy6afwmF004XGJvVCtwrOalVYAgalj3QPuwZ5ZZQpbuxutB5w_SkEeBj6Yf"/>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-20 px-margin-mobile max-w-container-max mx-auto md:px-margin-desktop space-y-xl">
+<!-- Greeting -->
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Good evening, Aarav</h2>
+</div>
+<!-- Smart Pad Hero Card -->
+<section class="bg-primary-container text-on-primary rounded-xl p-lg relative overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300">
+<!-- Decorative subtle pattern -->
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="font-headline-md text-headline-md mb-xs">DINIECO Smart Pad</h3>
+<p class="font-data-label text-data-label text-inverse-primary/80 uppercase">DINECO-PAD-001 • Last sync 2m ago</p>
+</div>
+<div class="flex items-center gap-2 bg-black/20 px-3 py-1 rounded-full border border-white/10">
+<span class="w-2 h-2 rounded-full bg-[#84cc16] animate-pulse"></span>
+<span class="font-data-label text-data-label text-on-primary">Connected</span>
+</div>
+</div>
+<div class="mt-8 mb-8">
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile text-[#84cc16] mb-2">Ready to track your meal?</h4>
+<p class="font-body-md text-body-md text-on-primary/90 max-w-sm">
+                        Place your meal on the DINIECO Pad and let the system analyze it automatically.
+                    </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 items-center justify-between mt-auto pt-4 border-t border-white/10">
+<button class="w-full sm:w-auto bg-[#84cc16] text-[#004c22] font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 hover:bg-[#95db28] transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined font-bold" data-icon="add" style="font-variation-settings: 'wght' 700;">add</span>
+                        Start Meal Session
+                    </button>
+<div class="font-data-label text-data-label text-inverse-primary bg-black/20 px-3 py-1.5 rounded-md border border-white/5">
+                        Load Sensor Ready • Cam 1080p
+                    </div>
+</div>
+</div>
+</section>
+<!-- Today's Summary (Bento Grid) -->
+<section>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md">Today's Summary</h3>
+<div class="grid grid-cols-2 gap-4">
+<!-- Calories -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md ambient-shadow transition-shadow">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-surface-tint" data-icon="local_fire_department">local_fire_department</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Calories</span>
+</div>
+<div class="font-data-display text-data-display text-on-surface tabular-nums mb-3">
+                        1,840 <span class="font-data-label text-data-label text-on-surface-variant">kcal</span>
+</div>
+<!-- Thick Progress Bar -->
+<div class="w-full h-2 bg-surface-tint/10 rounded-full overflow-hidden">
+<div class="h-full bg-amber-500 rounded-full" style="width: 87%;"></div>
+</div>
+</div>
+<!-- Food Intake -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md ambient-shadow transition-shadow flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-surface-tint" data-icon="restaurant">restaurant</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Intake</span>
+</div>
+<div>
+<div class="font-data-display text-data-display text-on-surface tabular-nums">
+                            1.24 <span class="font-data-label text-data-label text-on-surface-variant">kg</span>
+</div>
+<div class="font-data-label text-data-label text-on-surface-variant mt-1">3 meals</div>
+</div>
+</div>
+<!-- Food Waste -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md ambient-shadow transition-shadow">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-surface-tint" data-icon="delete_outline">delete_outline</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Waste</span>
+</div>
+<div class="font-data-display text-data-display text-on-surface tabular-nums mb-2">
+                        120 <span class="font-data-label text-data-label text-on-surface-variant">g</span>
+</div>
+<div class="flex items-center gap-1 text-surface-tint font-data-label text-data-label bg-surface-container-low px-2 py-1 rounded w-max">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_down">trending_down</span>
+                        -18% vs last week
+                    </div>
+</div>
+<!-- Waste Score -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md ambient-shadow transition-shadow flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 opacity-5 text-primary-container">
+<span class="material-symbols-outlined text-6xl" data-icon="eco">eco</span>
+</div>
+<div class="flex items-center gap-2 mb-2 relative z-10">
+<span class="material-symbols-outlined text-surface-tint" data-icon="eco">eco</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Score</span>
+</div>
+<div class="relative z-10">
+<div class="font-data-display text-data-display text-surface-tint tabular-nums">
+                            88<span class="text-on-surface-variant text-xl">/100</span>
+</div>
+<div class="font-data-label text-data-label text-[#84cc16] mt-1 uppercase tracking-wider">Optimal</div>
+</div>
+</div>
+<!-- Macro Footer Pill -->
+<div class="col-span-2 bg-surface-container-low border border-outline-variant rounded-lg p-3 flex justify-around items-center font-data-label text-data-label text-on-surface-variant tabular-nums">
+<div class="flex flex-col items-center"><span class="text-xs text-outline">Protein</span> <span class="text-on-surface">74g</span></div>
+<div class="w-px h-6 bg-outline-variant"></div>
+<div class="flex flex-col items-center"><span class="text-xs text-outline">Carbs</span> <span class="text-on-surface">210g</span></div>
+<div class="w-px h-6 bg-outline-variant"></div>
+<div class="flex flex-col items-center"><span class="text-xs text-outline">Fat</span> <span class="text-on-surface">58g</span></div>
+</div>
+</div>
+</section>
+<!-- DINIECO AI Insight Card -->
+<section class="bg-surface-container border border-primary/10 rounded-xl p-4 flex gap-4 items-start shadow-sm relative overflow-hidden">
+<!-- Sparkle accent -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-[#84cc16]/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="bg-surface-container-lowest p-2 rounded-full shadow-sm shrink-0 relative z-10">
+<span class="material-symbols-outlined text-primary-container" data-icon="auto_awesome" data-weight="fill" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="relative z-10">
+<h4 class="font-body-md text-body-md font-semibold text-primary-container mb-1">AI Insight</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    Your food waste is 18% lower than last week. You tend to leave more food during dinner. Consider starting with a slightly smaller portion.
+                </p>
+</div>
+</section>
+<!-- Recent Meals List -->
+<section>
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Meals</h3>
+<button class="font-body-sm text-body-sm text-surface-tint font-medium hover:underline">View All</button>
+</div>
+<div class="space-y-4">
+<!-- Meal Item 1 -->
+<div class="flex gap-4 p-3 bg-surface-container-lowest border border-outline-variant rounded-xl ambient-shadow transition-shadow group cursor-pointer">
+<img class="w-20 h-20 rounded-lg object-cover bg-surface-container-low group-hover:scale-105 transition-transform duration-300" data-alt="A top-down view of a beautifully plated South Indian breakfast featuring idli, dosa, and a small bowl of sambar on a modern minimalist ceramic plate, set on a clean light wood table, natural morning light casting soft shadows, high-resolution food photography, sustainable and healthy aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1to7uldagB4TavxanAcEAjgbaEbHiKFKb9Agq31GBtIaSkhXAldbLT0K3nre2AfSihFhDUGXwoF_IlM9ddbs2PViDnxZ0SrUjOdfQjSsfjAECdPKkch-fqdzVwaCksUgvXDv_0sARCKYDPEi6s1Tv7lWa2tVnA-FvVJcYy6RSeLR2hWW0SPeenFNVuxLTao7HDBPmjsSOUi3UffK08zHKLeLR9vSzKxaHmabgiXA4CxdHAWiXx_ZdHa27ho2TnUdUopjSbUxPE0Zj"/>
+<div class="flex-1 flex flex-col justify-center">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-body-md text-body-md font-medium text-on-surface line-clamp-1">South Indian Breakfast</h4>
+<span class="font-data-label text-data-label text-outline text-[10px]">09:30 AM</span>
+</div>
+<div class="font-data-label text-data-label text-on-surface-variant tabular-nums flex items-center gap-2 mb-2">
+<span>420g</span> • <span>540 kcal</span>
+</div>
+<div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-data-label font-medium bg-[#84cc16]/20 text-primary-container">
+<span class="material-symbols-outlined text-[12px]" data-icon="recycling">recycling</span>
+                                35g waste
+                            </span>
+</div>
+</div>
+</div>
+<!-- Meal Item 2 -->
+<div class="flex gap-4 p-3 bg-surface-container-lowest border border-outline-variant rounded-xl ambient-shadow transition-shadow group cursor-pointer">
+<img class="w-20 h-20 rounded-lg object-cover bg-surface-container-low group-hover:scale-105 transition-transform duration-300" data-alt="A top-down view of a vibrant vegetable rice bowl in a clean, modern white ceramic bowl. The bowl contains perfectly cooked white rice topped with colorful steamed vegetables like broccoli, carrots, and snap peas. Shot on a clean light surface with soft, diffused daylight, highlighting the fresh, healthy, and sustainable nature of the meal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpotol5KBw0p3eReGnVvXLwTIsiCgFpoKh4I1NhK-V4HKvv1EwfD4WHXbokhvHLzPpW15YRanHmhcZt2KajnCpul_ifjg8CxvtbLhJOMf3HfJ8bvxIWJPjC5vDuYILzLWFP8alY6Eu6GRTHXWQOzzc0mukYpXi8IpkNrJEB_SewVcIjqhYOWUQGH-NefQkh3O8IdCc7J-gMtd71qc6I9cVUrAusOCOODK9w4UBWAwOlWVmnOeCi84G9aq9yPO9wryqnXIny4DdBWCj"/>
+<div class="flex-1 flex flex-col justify-center">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-body-md text-body-md font-medium text-on-surface line-clamp-1">Vegetable Rice Bowl</h4>
+<span class="font-data-label text-data-label text-outline text-[10px]">01:15 PM</span>
+</div>
+<div class="font-data-label text-data-label text-on-surface-variant tabular-nums flex items-center gap-2 mb-2">
+<span>486g</span> • <span>620 kcal</span>
+</div>
+<div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-data-label font-medium bg-[#84cc16]/20 text-primary-container">
+<span class="material-symbols-outlined text-[12px]" data-icon="recycling">recycling</span>
+                                56g waste
+                            </span>
+</div>
+</div>
+</div>
+<!-- Meal Item 3 -->
+<div class="flex gap-4 p-3 bg-surface-container-lowest border border-outline-variant rounded-xl ambient-shadow transition-shadow group cursor-pointer">
+<img class="w-20 h-20 rounded-lg object-cover bg-surface-container-low group-hover:scale-105 transition-transform duration-300" data-alt="A close-up, top-down shot of a traditional Indian Paneer Roti meal served on a modern minimalist matte grey plate. Features soft whole wheat rotis alongside a portion of rich, warmly spiced paneer curry. The setting is clean and bright, emphasizing wholesome, homemade food with an elegant, contemporary presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX4L74eE4Yfk_qlhu12OCH4S2qYdj6ZSr-vlpZVC_s7SVbFogAt7JArvq4gLLH2_IPp164VWv0vVGGZXJaHlikb4zXl9QS4m-BtkBLqW1WhMuP3jobCU3kNn8bk6-ouzT6f2hZL65VvPf281TTkrR-g31Va2fKlC5sU52XvZmyEQLn-LYDn5xHO8qwgugFfwlmusb2GKkmS5FlM43G0GAEJxD2YUgMIu0iiz3Ek8ZYn2-1uiwig7uYrHWFoGcczHNKQXz-RxQ6r4wa"/>
+<div class="flex-1 flex flex-col justify-center">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-body-md text-body-md font-medium text-on-surface line-clamp-1">Paneer Roti Meal</h4>
+<span class="font-data-label text-data-label text-outline text-[10px]">08:45 PM</span>
+</div>
+<div class="font-data-label text-data-label text-on-surface-variant tabular-nums flex items-center gap-2 mb-2">
+<span>510g</span> • <span>710 kcal</span>
+</div>
+<div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-data-label font-medium bg-[#84cc16]/20 text-primary-container">
+<span class="material-symbols-outlined text-[12px]" data-icon="recycling">recycling</span>
+                                29g waste
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-2 pb-2 h-20 bg-surface-container dark:bg-surface-container z-50 rounded-t-xl shadow-[0_-4px_12px_rgba(0,76,34,0.04)] shadow-lg">
+<!-- Home (Active) -->
+<button class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary-container text-on-secondary-container dark:text-on-secondary-container rounded-full px-4 py-1 hover:bg-surface-variant/50 transition-colors active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined font-data-label text-data-label" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-data-label text-data-label mt-1 text-[10px]">Home</span>
+</button>
+<!-- History/Meals -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:bg-surface-variant/50 transition-colors active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined font-data-label text-data-label" data-icon="history">history</span>
+<span class="font-data-label text-data-label mt-1 text-[10px]">History</span>
+</button>
+<!-- Center FAB (Start Meal) -->
+<div class="relative -top-6">
+<button class="bg-[#84cc16] text-[#004c22] w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-[#95db28] transition-colors active:scale-95 duration-200 border-4 border-surface-container">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="add" style="font-variation-settings: 'wght' 700;">add</span>
+</button>
+</div>
+<!-- Insights/Analytics -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:bg-surface-variant/50 transition-colors active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined font-data-label text-data-label" data-icon="analytics">analytics</span>
+<span class="font-data-label text-data-label mt-1 text-[10px]">Insights</span>
+</button>
+<!-- Settings/Profile -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:bg-surface-variant/50 transition-colors active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined font-data-label text-data-label" data-icon="settings">settings</span>
+<span class="font-data-label text-data-label mt-1 text-[10px]">Settings</span>
+</button>
+</nav>
+</body></html>

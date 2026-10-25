@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DINIECO - Food Waste &amp; Nutrition Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c0c9be",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#91db2a",
+                        "surface-container-highest": "#e2e2e2",
+                        "primary-fixed": "#adf3b8",
+                        "primary": "#003315",
+                        "secondary-container": "#acf847",
+                        "surface-variant": "#e2e2e2",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#3a433c",
+                        "on-surface-variant": "#404940",
+                        "surface-tint": "#296b3d",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#004c22",
+                        "on-primary-fixed": "#00210b",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary-fixed": "#acf847",
+                        "inverse-primary": "#92d69e",
+                        "tertiary-fixed-dim": "#bfc9c0",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#416900",
+                        "on-tertiary-fixed": "#151e18",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-container": "#a5afa7",
+                        "error": "#ba1a1a",
+                        "tertiary": "#242d27",
+                        "on-primary-fixed-variant": "#0a5227",
+                        "on-secondary-fixed": "#102000",
+                        "tertiary-fixed": "#dbe5db",
+                        "on-secondary-container": "#457000",
+                        "surface-dim": "#dadada",
+                        "on-surface": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#304f00",
+                        "inverse-on-surface": "#f0f1f1",
+                        "surface-container": "#eeeeee",
+                        "on-background": "#1a1c1c",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f9f9f9",
+                        "outline": "#707970",
+                        "on-primary-container": "#79bc86",
+                        "on-tertiary-fixed-variant": "#404942",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-low": "#f3f3f4",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#92d69e",
+                        "background": "#f2fcf2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "8px",
+                        "base": "4px",
+                        "xl": "64px",
+                        "sm": "16px",
+                        "lg": "40px",
+                        "gutter": "20px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "data-label": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "data-metric-lg": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "data-label": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "data-metric-lg": ["36px", { "lineHeight": "1", "letterSpacing": "-0.03em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #f2fcf2; }
+        .data-number { font-family: 'Space Grotesk', sans-serif; }
+        .metric-card-shadow { box-shadow: 0px 4px 12px rgba(0, 76, 34, 0.03); }
+        .focus-shadow:focus-within { box-shadow: 0px 12px 32px rgba(0, 76, 34, 0.08); }
+        
+        /* Bar Chart Animation */
+        @keyframes growBar {
+            from { height: 0; }
+            to { height: var(--target-height); }
+        }
+        .animate-bar {
+            animation: growBar 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
+<!-- TopNavBar (JSON Managed) -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant dark:border-outline-variant/30 shadow-sm dark:shadow-none docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-md max-w-container-max mx-auto">
+<!-- Brand & Status -->
+<div class="flex items-center gap-sm">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">DINIECO</span>
+<div class="hidden md:flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-full border border-primary-container/10">
+<span class="material-symbols-outlined text-secondary-container" style="font-size: 16px; font-variation-settings: 'FILL' 1;">wifi</span>
+<span class="font-data-label text-data-label text-on-surface-variant uppercase">Smart Pad Connected</span>
+</div>
+</div>
+<!-- Navigation Links (Analytics Active) -->
+<nav class="hidden md:flex items-center gap-md">
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md hover:bg-surface-container-low dark:hover:bg-surface-container-high rounded-lg px-3 py-2 transition-all" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md hover:bg-surface-container-low dark:hover:bg-surface-container-high rounded-lg px-3 py-2 transition-all" href="#">Meals</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-secondary dark:border-secondary-fixed pb-1 font-body-md text-body-md hover:bg-surface-container-low dark:hover:bg-surface-container-high rounded-lg px-3 py-2 transition-all scale-95 transition-transform duration-150" href="#">Analytics</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md hover:bg-surface-container-low dark:hover:bg-surface-container-high rounded-lg px-3 py-2 transition-all" href="#">Profile</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-sm">
+<button class="bg-primary-container hover:bg-surface-tint text-on-primary font-body-md text-body-md px-4 py-2 rounded-lg font-semibold transition-colors flex items-center min-h-[48px]">
+                    + Start Meal
+                </button>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors flex items-center justify-center min-h-[48px] min-w-[48px]">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors hidden sm:flex items-center justify-center min-h-[48px] min-w-[48px]">
+<span class="material-symbols-outlined" data-icon="cast_connected">cast_connected</span>
+</button>
+<img alt="User profile avatar" class="w-10 h-10 rounded-full border-2 border-surface-container-highest object-cover" data-alt="A clean, professional headshot of a user, modern lighting, circular crop, acting as a profile avatar for a corporate wellness application, bright white background, subtle drop shadow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbqU3PGwIEPBzNTZloKDQWdXS7qMYAJdmBZPt7_LTIrG2vqTuiBSfIKxhQnxO44LzQBfdY5yVU7FE9FZvEDr8-5B0ko0Yg6lg53DUEe-lvyEDmtgGhEWq27Pp7xnm2djJC3VpOROKBcPxKgUmm2qSqCmXqkBCzEszzggaszOa582147LTIrUhG1MjblZXT6ccMk8bUn7tZT84bT8OjBclVpi3EVhvfruRCpqZ4HUctY48QFEV_IYrfs2n6okO2VhI_OsFcqzC1LQHC"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-lg flex flex-col gap-lg">
+<!-- Header & Filter Row -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-sm">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-1">Analytics Dashboard</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Monitor your food waste reduction progress and nutritional trends.</p>
+</div>
+<!-- Time Range Toggle -->
+<div class="flex bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-1 shadow-sm">
+<button class="px-4 py-2 bg-primary-container text-on-primary rounded-md font-body-md text-sm font-semibold shadow-sm transition-all">7 Days</button>
+<button class="px-4 py-2 text-on-surface-variant hover:bg-surface-container-low rounded-md font-body-md text-sm transition-all">30 Days</button>
+<button class="px-4 py-2 text-on-surface-variant hover:bg-surface-container-low rounded-md font-body-md text-sm transition-all">3 Months</button>
+</div>
+</div>
+<!-- 4 Metric Overview Cards (Row) -->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-sm">
+<!-- Today's Waste -->
+<div class="bg-surface-container-lowest rounded-xl border border-primary-container/10 p-md metric-card-shadow flex flex-col justify-between">
+<span class="font-data-label text-data-label text-on-surface-variant uppercase tracking-wider mb-2">Today's Waste</span>
+<div class="flex items-baseline gap-2 mt-auto">
+<span class="font-data-metric-lg text-data-metric-lg text-primary data-number">56g</span>
+<div class="flex items-center text-secondary-container font-data-label text-xs">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span>
+<span>-24g</span>
+</div>
+</div>
+</div>
+<!-- Weekly Waste -->
+<div class="bg-surface-container-lowest rounded-xl border border-primary-container/10 p-md metric-card-shadow flex flex-col justify-between">
+<span class="font-data-label text-data-label text-on-surface-variant uppercase tracking-wider mb-2">Weekly Waste</span>
+<div class="flex items-baseline gap-2 mt-auto">
+<span class="font-data-metric-lg text-data-metric-lg text-primary data-number">613g</span>
+<div class="flex items-center text-secondary-container font-data-label text-xs">
+<span class="material-symbols-outlined text-[14px]">trending_down</span>
+<span>-18%</span>
+</div>
+</div>
+</div>
+<!-- Monthly Waste -->
+<div class="bg-surface-container-lowest rounded-xl border border-primary-container/10 p-md metric-card-shadow flex flex-col justify-between">
+<span class="font-data-label text-data-label text-on-surface-variant uppercase tracking-wider mb-2">Monthly Waste</span>
+<div class="flex items-baseline gap-2 mt-auto">
+<span class="font-data-metric-lg text-data-metric-lg text-primary data-number">2.4 kg</span>
+<span class="text-on-surface-variant text-xs opacity-70">Projected</span>
+</div>
+</div>
+<!-- Waste Score -->
+<div class="bg-surface-container-lowest rounded-xl border border-primary-container/10 p-md metric-card-shadow flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-secondary-container/10 rounded-full blur-xl"></div>
+<span class="font-data-label text-data-label text-on-surface-variant uppercase tracking-wider mb-2 relative z-10">Waste Score</span>
+<div class="flex items-baseline gap-2 mt-auto relative z-10">
+<span class="font-data-metric-lg text-data-metric-lg text-primary data-number">82<span class="text-lg text-on-surface-variant/50">/100</span></span>
+<span class="bg-secondary-container/20 text-primary-container px-2 py-0.5 rounded-full text-xs font-semibold">Optimal</span>
+</div>
+</div>
+</div>
+<!-- TWO-COLUMN SPLIT GRID (Tablet/Desktop) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm lg:gap-md">
+<!-- LEFT COLUMN (Food Waste Analytics) -->
+<div class="flex flex-col gap-sm lg:gap-md">
+<!-- Bar Chart Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-primary-container/10 p-md metric-card-shadow flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-body-md font-semibold text-lg text-primary">Daily Waste Trend</h3>
+<button class="p-1 text-on-surface-variant hover:bg-surface-container-low rounded transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<!-- Simulated Bar Chart -->
+<div class="flex-1 min-h-[200px] flex items-end justify-between gap-2 sm:gap-4 mt-auto pt-4 border-t border-outline-variant/20 relative">
+<!-- Y-axis labels (hidden on mobile) -->
+<div class="hidden sm:flex flex-col justify-between absolute left-0 top-0 bottom-6 text-xs text-on-surface-variant/60 font-data-label">
+<span>120g</span>
+<span>60g</span>
+<span>0g</span>
+</div>
+<div class="hidden sm:block w-8 shrink-0"></div> <!-- Spacer -->
+<!-- Bars -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full max-w-[32px] bg-gradient-to-t from-primary-container to-secondary-container rounded-t-sm relative flex items-end justify-center animate-bar opacity-80 group-hover:opacity-100 transition-opacity" style="--target-height: 92%;">
+<span class="absolute -top-6 text-xs font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity">110g</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">Mon</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full max-w-[32px] bg-gradient-to-t from-primary-container to-secondary-container rounded-t-sm relative flex items-end justify-center animate-bar opacity-80 group-hover:opacity-100 transition-opacity" style="--target-height: 75%;">
+<span class="absolute -top-6 text-xs font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity">90g</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">Tue</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full max-w-[32px] bg-gradient-to-t from-primary-container to-secondary-container rounded-t-sm relative flex items-end justify-center animate-bar opacity-80 group-hover:opacity-100 transition-opacity" style="--target-height: 85%;">
+<span class="absolute -top-6 text-xs font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity">102g</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">Wed</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full max-w-[32px] bg-gradient-to-t from-primary-container to-secondary-container rounded-t-sm relative flex items-end justify-center animate-bar opacity-80 group-hover:opacity-100 transition-opacity" style="--target-height: 60%;">
+<span class="absolute -top-6 text-xs font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity">72g</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">Thu</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full max-w-[32px] bg-gradient-to-t from-primary-container to-secondary-container rounded-t-sm relative flex items-end justify-center animate-bar opacity-80 group-hover:opacity-100 transition-opacity" style="--target-height: 55%;">
+<span class="absolute -top-6 text-xs font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity">66g</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">Fri</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full max-w-[32px] bg-gradient-to-t from-primary-container to-secondary-container rounded-t-sm relative flex items-end justify-center animate-bar opacity-80 group-hover:opacity-100 transition-opacity" style="--target-height: 70%;">
+<span class="absolute -top-6 text-xs font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity">84g</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">Sat</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full max-w-[32px] bg-gradient-to-t from-primary-container to-secondary-container rounded-t-sm relative flex items-end justify-center animate-bar opacity-100 transition-opacity ring-2 ring-secondary-container ring-offset-2" style="--target-height: 48%;">
+<span class="absolute -top-6 text-xs font-bold text-primary">58g</span>
+</div>
+<span class="text-xs text-primary font-bold">Sun</span>
+</div>
+</div>
+</div>
+<!-- Category Breakdown -->
+<div class="bg-surface-container-lowest rounded-xl border border-primary-container/10 p-md metric-card-shadow">
+<h3 class="font-body-md font-semibold text-lg text-primary mb-4">Category Waste Breakdown</h3>
+<div class="flex flex-col gap-4">
+<!-- Rice -->
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="text-on-surface-variant font-medium">Rice</span>
+<span class="text-primary font-bold data-number">38%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-primary-container h-2 rounded-full" style="width: 38%"></div>
+</div>
+</div>
+<!-- Vegetables -->
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="text-on-surface-variant font-medium">Vegetables</span>
+<span class="text-primary font-bold data-number">27%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-surface-tint h-2 rounded-full" style="width: 27%"></div>
+</div>
+</div>
+<!-- Bread -->
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="text-on-surface-variant font-medium">Bread</span>
+<span class="text-primary font-bold data-number">15%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-inverse-primary h-2 rounded-full" style="width: 15%"></div>
+</div>
+</div>
+<!-- Protein -->
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="text-on-surface-variant font-medium">Protein</span>
+<span class="text-primary font-bold data-number">12%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-secondary-container h-2 rounded-full" style="width: 12%"></div>
+</div>
+</div>
+<!-- Other -->
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="text-on-surface-variant font-medium">Other</span>
+<span class="text-primary font-bold data-number">8%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-outline-variant h-2 rounded-full" style="width: 8%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (Nutrition Trends & AI Insights) -->
+<div class="flex flex-col gap-sm lg:gap-md">
+<!-- Macronutrient & Efficiency Grid -->
+<div class="grid grid-cols-2 gap-sm">
+<!-- Macros -->
+<div class="bg-surface-container-lowest rounded-xl border border-primary-container/10 p-md metric-card-shadow col-span-2 sm:col-span-1">
+<h3 class="font-body-md font-semibold text-sm text-on-surface-variant mb-4 uppercase tracking-wide">Daily Averages</h3>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center border-b border-outline-variant/20 pb-2">
+<span class="text-sm text-on-surface-variant">Calories</span>
+<span class="font-bold text-primary data-number">1,840 <span class="text-xs font-normal text-on-surface-variant">kcal</span></span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/20 pb-2">
+<span class="text-sm text-on-surface-variant flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-primary-container"></div>Protein</span>
+<span class="font-bold text-primary data-number">74<span class="text-xs font-normal text-on-surface-variant">g</span></span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/20 pb-2">
+<span class="text-sm text-on-surface-variant flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-surface-tint"></div>Carbs</span>
+<span class="font-bold text-primary data-number">210<span class="text-xs font-normal text-on-surface-variant">g</span></span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-on-surface-variant flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-secondary-container"></div>Fat</span>
+<span class="font-bold text-primary data-number">58<span class="text-xs font-normal text-on-surface-variant">g</span></span>
+</div>
+</div>
+</div>
+<!-- Efficiency -->
+<div class="bg-primary-container rounded-xl border border-primary-container/10 p-md metric-card-shadow col-span-2 sm:col-span-1 text-on-primary flex flex-col justify-center relative overflow-hidden">
+<!-- Decorative bg -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-surface-tint/50 rounded-full blur-2xl"></div>
+<span class="font-data-label text-data-label text-inverse-primary uppercase tracking-wider mb-2 relative z-10">Avg Meal Size</span>
+<div class="flex items-baseline gap-1 mb-6 relative z-10">
+<span class="font-data-metric-lg text-data-metric-lg data-number text-on-primary">472g</span>
+</div>
+<span class="font-data-label text-data-label text-inverse-primary uppercase tracking-wider mb-2 relative z-10">Avg Consumed</span>
+<div class="flex items-center gap-2 relative z-10">
+<span class="font-data-metric-lg text-data-metric-lg data-number text-secondary-container">88.6%</span>
+<span class="material-symbols-outlined text-secondary-container">trending_up</span>
+</div>
+</div>
+</div>
+<!-- AI Insights Header -->
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-secondary-container">auto_awesome</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">DINIECO Insights</h2>
+</div>
+<!-- Insight Cards -->
+<div class="flex flex-col gap-sm">
+<!-- Insight 1 -->
+<div class="bg-surface-container-lowest rounded-xl border-l-4 border-l-secondary-container border-t border-r border-b border-primary-container/10 p-md metric-card-shadow flex gap-4 items-start focus-shadow" tabindex="0">
+<div class="bg-secondary-container/20 p-2 rounded-full shrink-0 mt-1">
+<span class="material-symbols-outlined text-primary-container">monitoring</span>
+</div>
+<div>
+<h4 class="font-body-md font-bold text-primary mb-1">Waste Reduction Trend</h4>
+<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+<strong class="text-primary-container">18% lower waste this week.</strong> Your breakfast and dinner adjustments are making an immediate impact on overall sustainability.
+                            </p>
+</div>
+</div>
+<!-- Insight 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-primary-container/10 p-md metric-card-shadow flex gap-4 items-start focus-shadow" tabindex="0">
+<div class="bg-surface-container-high p-2 rounded-full shrink-0 mt-1">
+<span class="material-symbols-outlined text-on-surface-variant">restaurant</span>
+</div>
+<div>
+<h4 class="font-body-md font-bold text-primary mb-1">Dinner Portion Optimization</h4>
+<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                                You tend to leave more food during dinner. Consider starting with smaller side portions, especially with rice and vegetables, to improve efficiency.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (JSON Managed) -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-low border-t border-outline-variant dark:border-outline-variant/20 full-width bottom-0 mt-xl">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-lg gap-md max-w-[1440px] mx-auto">
+<span class="font-headline-md text-headline-md text-primary font-bold opacity-80 hover:opacity-100 transition-opacity">DINIECO</span>
+<nav class="flex flex-wrap justify-center gap-sm md:gap-lg font-body-sm text-body-sm">
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed underline transition-all" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed underline transition-all" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed underline transition-all" href="#">Sustainability Report</a>
+</nav>
+<span class="text-on-surface-variant dark:text-on-tertiary-container font-body-sm text-body-sm opacity-80 hover:opacity-100 transition-opacity">© 2024 DINIECO Sustainable Vitality. All rights reserved.</span>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DINIECO - Meal Summary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;family=Work+Sans:wght@400&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#004c22",
+                        "surface-variant": "#dbe5db",
+                        "inverse-on-surface": "#e9f3e9",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#ecf6ec",
+                        "tertiary": "#242d27",
+                        "surface-container-high": "#e1ebe1",
+                        "on-surface": "#151e18",
+                        "on-primary-container": "#79bc86",
+                        "secondary-fixed-dim": "#91db2a",
+                        "outline-variant": "#c0c9be",
+                        "on-surface-variant": "#404940",
+                        "on-primary-fixed": "#00210b",
+                        "secondary-fixed": "#acf847",
+                        "on-tertiary-container": "#a5afa7",
+                        "surface-dim": "#d2ddd3",
+                        "on-primary-fixed-variant": "#0a5227",
+                        "secondary": "#416900",
+                        "on-secondary-container": "#457000",
+                        "surface": "#f2fcf2",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e6f1e6",
+                        "on-background": "#151e18",
+                        "inverse-surface": "#29332c",
+                        "secondary-container": "#acf847",
+                        "on-secondary-fixed": "#102000",
+                        "surface-tint": "#296b3d",
+                        "on-tertiary-fixed-variant": "#404942",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#151e18",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#dbe5db",
+                        "tertiary-container": "#3a433c",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#bfc9c0",
+                        "surface-container-highest": "#dbe5db",
+                        "outline": "#707970",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f2fcf2",
+                        "primary": "#003315",
+                        "on-secondary-fixed-variant": "#304f00",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#92d69e",
+                        "background": "#f2fcf2",
+                        "inverse-primary": "#92d69e",
+                        "primary-fixed": "#adf3b8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "40px",
+                        "unit": "4px",
+                        "margin-desktop": "64px",
+                        "lg": "24px",
+                        "container-max": "1280px",
+                        "md": "16px",
+                        "margin-mobile": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["manrope"],
+                        "headline-md": ["manrope"],
+                        "body-lg": ["workSans"],
+                        "body-md": ["workSans"],
+                        "headline-lg": ["manrope"],
+                        "body-sm": ["workSans"],
+                        "headline-xl": ["manrope"],
+                        "data-label": ["spaceGrotesk"],
+                        "data-display": ["spaceGrotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "data-label": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "data-display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.surface'); }
+        .data-card { 
+            background-color: theme('colors.surface-container-lowest'); 
+            border: 1px solid theme('colors.outline-variant');
+            transition: all 0.3s ease;
+        }
+        .data-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 76, 34, 0.06);
+            transform: translateY(-2px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface font-body-md min-h-screen pb-24 md:pb-0">
+<!-- Top Navigation (Shell suppressed for this transactional flow, but kept minimal header) -->
+<header class="bg-surface/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 flex justify-between items-center px-margin-mobile h-16">
+<div class="font-headline-lg font-bold text-primary tracking-tight">DINIECO</div>
+<button class="text-on-surface-variant hover:bg-surface-container-high/50 p-2 rounded-full transition-colors active:scale-95 transition-transform flex items-center justify-center">
+<span class="material-symbols-outlined">close</span>
+</button>
+</header>
+<main class="max-w-[800px] mx-auto pt-[100px] px-margin-mobile pb-xl">
+<!-- Header Section -->
+<div class="flex flex-col items-center text-center mb-xl">
+<div class="w-16 h-16 bg-surface-container-high rounded-full flex items-center justify-center mb-md shadow-sm">
+<span class="material-symbols-outlined text-[#84cc16] text-[40px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-primary mb-xs">Meal Recorded</h1>
+<p class="font-headline-md text-on-surface mb-xs">Vegetable Rice Bowl</p>
+<p class="font-body-sm text-on-surface-variant">Oct 24, 2023 • 01:45 PM</p>
+</div>
+<!-- Meal Impact Card -->
+<div class="data-card rounded-xl p-lg mb-md">
+<div class="flex justify-between items-center mb-md pb-md border-b border-outline-variant/30">
+<span class="font-headline-md text-on-surface">Waste Score</span>
+<div class="flex items-center gap-2">
+<span class="font-data-display text-primary">82</span>
+<span class="font-body-sm text-on-surface-variant">/ 100</span>
+<span class="bg-[#ecf6ec] text-[#004c22] px-3 py-1 rounded-full font-body-sm ml-sm font-semibold">Optimal</span>
+</div>
+</div>
+<!-- Weight Comparison -->
+<div class="grid grid-cols-3 gap-sm mb-lg text-center">
+<div class="flex flex-col items-center">
+<span class="font-data-label text-on-surface-variant mb-xs">Initial Weight</span>
+<span class="font-data-display text-on-surface">842g</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-data-label text-on-surface-variant mb-xs">Consumed</span>
+<span class="font-data-display text-primary">632g</span>
+<span class="font-body-sm text-primary">(75.1%)</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-data-label text-on-surface-variant mb-xs">Remaining</span>
+<span class="font-data-display text-[#d97706]">210g</span>
+<span class="font-body-sm text-[#d97706]">(24.9%)</span>
+</div>
+</div>
+<!-- Visual Consumption Ratio Bar -->
+<div class="w-full h-3 rounded-full bg-[#fcd34d] overflow-hidden flex mb-sm">
+<div class="h-full bg-primary" style="width: 75.1%"></div>
+</div>
+<div class="flex justify-between font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-xs"><span class="w-2 h-2 rounded-full bg-primary block"></span> Consumed</div>
+<div class="flex items-center gap-xs">Remaining <span class="w-2 h-2 rounded-full bg-[#fcd34d] block"></span></div>
+</div>
+</div>
+<!-- Leftover Food Breakdown -->
+<h2 class="font-headline-md text-on-surface mb-md">Leftover Breakdown</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm mb-xl">
+<div class="data-card rounded-lg p-md flex justify-between items-center">
+<span class="font-body-md text-on-surface">Rice / Grains</span>
+<div class="text-right">
+<span class="font-data-label block text-on-surface-variant">38%</span>
+<span class="font-data-label block text-primary">80g</span>
+</div>
+</div>
+<div class="data-card rounded-lg p-md flex justify-between items-center">
+<span class="font-body-md text-on-surface">Vegetables &amp; Gravy</span>
+<div class="text-right">
+<span class="font-data-label block text-on-surface-variant">27%</span>
+<span class="font-data-label block text-primary">57g</span>
+</div>
+</div>
+<div class="data-card rounded-lg p-md flex justify-between items-center">
+<span class="font-body-md text-on-surface">Breads / Roti</span>
+<div class="text-right">
+<span class="font-data-label block text-on-surface-variant">15%</span>
+<span class="font-data-label block text-primary">31g</span>
+</div>
+</div>
+<div class="data-card rounded-lg p-md flex justify-between items-center">
+<span class="font-body-md text-on-surface">Protein / Paneer</span>
+<div class="text-right">
+<span class="font-data-label block text-on-surface-variant">12%</span>
+<span class="font-data-label block text-primary">25g</span>
+</div>
+</div>
+<div class="data-card rounded-lg p-md flex justify-between items-center">
+<span class="font-body-md text-on-surface">Other / Chutney</span>
+<div class="text-right">
+<span class="font-data-label block text-on-surface-variant">8%</span>
+<span class="font-data-label block text-primary">17g</span>
+</div>
+</div>
+</div>
+<!-- AI Recommendation Card -->
+<div class="bg-surface-container-low rounded-xl p-lg border border-outline-variant/30 mb-xl flex items-start gap-md">
+<span class="material-symbols-outlined text-primary mt-1">lightbulb</span>
+<div>
+<h3 class="font-headline-md text-primary mb-xs">Helpful Observation</h3>
+<p class="font-body-md text-on-surface">You tend to leave more rice during lunch. Consider starting with a 15% smaller rice portion to reduce plate leftovers.</p>
+</div>
+</div>
+<!-- Nutrition Recap -->
+<h2 class="font-headline-md text-on-surface mb-md">Nutrition Recap</h2>
+<div class="flex flex-wrap gap-sm mb-xl">
+<div class="bg-surface-container-lowest border border-outline-variant px-md py-sm rounded-full flex flex-col items-center flex-1 min-w-[100px]">
+<span class="font-data-label text-on-surface-variant">Calories</span>
+<span class="font-data-display text-[24px] text-on-surface">620 <span class="text-[14px]">kcal</span></span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant px-md py-sm rounded-full flex flex-col items-center flex-1 min-w-[100px]">
+<span class="font-data-label text-on-surface-variant">Protein</span>
+<span class="font-data-display text-[24px] text-on-surface">24g</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant px-md py-sm rounded-full flex flex-col items-center flex-1 min-w-[100px]">
+<span class="font-data-label text-on-surface-variant">Carbs</span>
+<span class="font-data-display text-[24px] text-on-surface">82g</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant px-md py-sm rounded-full flex flex-col items-center flex-1 min-w-[100px]">
+<span class="font-data-label text-on-surface-variant">Fat</span>
+<span class="font-data-display text-[24px] text-on-surface">18g</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-md">
+<button class="w-full bg-[#84cc16] text-[#004c22] font-bold py-md rounded-xl hover:bg-[#91db2a] transition-colors active:scale-95 duration-200">
+                Save to History &amp; Return Home
+            </button>
+<button class="w-full border border-primary text-primary font-bold py-md rounded-xl hover:bg-surface-container-low transition-colors active:scale-95 duration-200">
+                View Detailed Waste Analytics
+            </button>
+</div>
+</main>
+</body></html>

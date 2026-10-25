@@ -1,0 +1,455 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1792299790836,68,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,1,1,http://127.0.0.1:8000/,62,0,44
+1792299791925,5,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,1,1,http://127.0.0.1:8000/health,5,0,0
+1792299792942,8,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,2,2,http://127.0.0.1:8000/api/v1/device/status,7,0,0
+1792299793660,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,2,2,http://127.0.0.1:8000/,5,0,2
+1792299793959,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,2,2,http://127.0.0.1:8000/,3,0,0
+1792299794681,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,2,2,http://127.0.0.1:8000/health,4,0,0
+1792299794976,5,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,2,2,http://127.0.0.1:8000/health,5,0,0
+1792299795693,9,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,3,3,http://127.0.0.1:8000/api/v1/device/status,9,0,0
+1792299795992,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,3,3,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299796655,8,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,3,3,http://127.0.0.1:8000/,8,0,2
+1792299796710,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,3,3,http://127.0.0.1:8000/,4,0,0
+1792299797008,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,3,3,http://127.0.0.1:8000/,4,0,0
+1792299797677,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,3,3,http://127.0.0.1:8000/health,4,0,0
+1792299797725,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,3,3,http://127.0.0.1:8000/health,3,0,0
+1792299798022,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,3,3,http://127.0.0.1:8000/health,3,0,0
+1792299798684,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,454,165,4,4,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299798736,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,4,4,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299799027,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,4,4,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299799661,6,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,240,145,4,4,http://127.0.0.1:8000/,6,0,2
+1792299799694,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,4,4,http://127.0.0.1:8000/,3,0,0
+1792299799745,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,4,4,http://127.0.0.1:8000/,3,0,0
+1792299800044,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,4,4,http://127.0.0.1:8000/,4,0,0
+1792299800678,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,168,151,4,4,http://127.0.0.1:8000/health,3,0,0
+1792299800711,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,4,4,http://127.0.0.1:8000/health,4,0,0
+1792299800759,5,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,4,4,http://127.0.0.1:8000/health,4,0,0
+1792299801054,24,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,4,4,http://127.0.0.1:8000/health,24,0,0
+1792299801693,29,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,454,165,5,5,http://127.0.0.1:8000/api/v1/device/status,29,0,0
+1792299801717,70,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,454,165,5,5,http://127.0.0.1:8000/api/v1/device/status,70,0,0
+1792299801766,52,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,5,5,http://127.0.0.1:8000/api/v1/device/status,52,0,0
+1792299802080,11,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,5,5,http://127.0.0.1:8000/api/v1/device/status,10,0,0
+1792299802675,14,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,240,145,5,5,http://127.0.0.1:8000/,14,0,5
+1792299802737,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,240,145,5,5,http://127.0.0.1:8000/,4,0,0
+1792299802799,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,5,5,http://127.0.0.1:8000/,5,0,0
+1792299802831,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,5,5,http://127.0.0.1:8000/,4,0,0
+1792299803100,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,5,5,http://127.0.0.1:8000/,4,0,0
+1792299803705,6,GET health,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,168,151,5,5,http://127.0.0.1:8000/health,6,0,0
+1792299803754,6,GET health,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,168,151,5,5,http://127.0.0.1:8000/health,6,0,0
+1792299803815,7,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,5,5,http://127.0.0.1:8000/health,7,0,0
+1792299803846,8,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,5,5,http://127.0.0.1:8000/health,8,0,0
+1792299804110,11,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,5,5,http://127.0.0.1:8000/health,11,0,0
+1792299804717,70,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,454,165,6,6,http://127.0.0.1:8000/api/v1/device/status,70,0,0
+1792299804767,76,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,454,165,6,6,http://127.0.0.1:8000/api/v1/device/status,76,0,0
+1792299804824,96,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,454,165,6,6,http://127.0.0.1:8000/api/v1/device/status,95,0,0
+1792299804856,69,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,6,6,http://127.0.0.1:8000/api/v1/device/status,68,0,0
+1792299805124,24,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,6,6,http://127.0.0.1:8000/api/v1/device/status,24,0,0
+1792299805646,9,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,240,145,6,6,http://127.0.0.1:8000/,9,0,4
+1792299805793,10,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,240,145,6,6,http://127.0.0.1:8000/,10,0,0
+1792299805864,13,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,240,145,6,6,http://127.0.0.1:8000/,13,0,0
+1792299805929,7,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,6,6,http://127.0.0.1:8000/,7,0,0
+1792299805928,10,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,6,6,http://127.0.0.1:8000/,10,0,0
+1792299806160,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,6,6,http://127.0.0.1:8000/,4,0,0
+1792299806666,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,168,151,6,6,http://127.0.0.1:8000/health,4,0,0
+1792299806811,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,168,151,6,6,http://127.0.0.1:8000/health,4,0,0
+1792299806889,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,168,151,6,6,http://127.0.0.1:8000/health,3,0,0
+1792299806952,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,6,6,http://127.0.0.1:8000/health,4,0,0
+1792299806952,5,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,6,6,http://127.0.0.1:8000/health,5,0,0
+1792299807171,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,6,6,http://127.0.0.1:8000/health,3,0,0
+1792299807679,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,454,165,7,7,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299807816,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,454,165,7,7,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299807896,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,454,165,7,7,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299807958,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,454,165,7,7,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299807959,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,7,7,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299808180,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,7,7,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299808654,7,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,240,145,7,7,http://127.0.0.1:8000/,7,0,3
+1792299808688,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,240,145,7,7,http://127.0.0.1:8000/,4,0,0
+1792299808830,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,240,145,7,7,http://127.0.0.1:8000/,4,0,0
+1792299808905,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,240,145,7,7,http://127.0.0.1:8000/,3,0,0
+1792299808966,19,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,7,7,http://127.0.0.1:8000/,19,0,0
+1792299808967,44,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,7,7,http://127.0.0.1:8000/,44,0,0
+1792299809196,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,7,7,http://127.0.0.1:8000/,4,0,0
+1792299809663,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,168,151,7,7,http://127.0.0.1:8000/health,4,0,0
+1792299809696,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,168,151,7,7,http://127.0.0.1:8000/health,4,0,0
+1792299809847,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,168,151,7,7,http://127.0.0.1:8000/health,3,0,0
+1792299809916,38,GET health,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,168,151,7,7,http://127.0.0.1:8000/health,38,0,0
+1792299809987,24,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,7,7,http://127.0.0.1:8000/health,24,0,0
+1792299810019,20,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,7,7,http://127.0.0.1:8000/health,20,0,0
+1792299810207,129,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,7,7,http://127.0.0.1:8000/health,129,0,0
+1792299810674,21,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,454,165,8,8,http://127.0.0.1:8000/api/v1/device/status,21,0,0
+1792299810709,12,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,454,165,8,8,http://127.0.0.1:8000/api/v1/device/status,12,0,0
+1792299810852,8,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,454,165,8,8,http://127.0.0.1:8000/api/v1/device/status,8,0,0
+1792299810957,14,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,454,165,8,8,http://127.0.0.1:8000/api/v1/device/status,14,0,0
+1792299811020,9,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,454,165,8,8,http://127.0.0.1:8000/api/v1/device/status,9,0,0
+1792299811041,12,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,8,8,http://127.0.0.1:8000/api/v1/device/status,12,0,0
+1792299811345,8,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,8,8,http://127.0.0.1:8000/api/v1/device/status,8,0,0
+1792299811684,7,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,240,145,8,8,http://127.0.0.1:8000/,7,0,3
+1792299811698,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,240,145,8,8,http://127.0.0.1:8000/,4,0,0
+1792299811733,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,240,145,8,8,http://127.0.0.1:8000/,3,0,0
+1792299811862,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,240,145,8,8,http://127.0.0.1:8000/,3,0,0
+1792299811984,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,240,145,8,8,http://127.0.0.1:8000/,4,0,0
+1792299812033,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,8,8,http://127.0.0.1:8000/,4,0,0
+1792299812064,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,8,8,http://127.0.0.1:8000/,3,0,0
+1792299812364,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,8,8,http://127.0.0.1:8000/,3,0,0
+1792299812699,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,168,151,8,8,http://127.0.0.1:8000/health,3,0,0
+1792299812714,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,168,151,8,8,http://127.0.0.1:8000/health,3,0,0
+1792299812744,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,168,151,8,8,http://127.0.0.1:8000/health,3,0,0
+1792299812879,5,GET health,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,168,151,8,8,http://127.0.0.1:8000/health,5,0,0
+1792299812990,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,168,151,8,8,http://127.0.0.1:8000/health,3,0,0
+1792299813052,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,8,8,http://127.0.0.1:8000/health,3,0,0
+1792299813069,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,8,8,http://127.0.0.1:8000/health,3,0,0
+1792299813380,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,8,8,http://127.0.0.1:8000/health,3,0,0
+1792299813705,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,454,165,9,9,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299813718,7,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,454,165,9,9,http://127.0.0.1:8000/api/v1/device/status,7,0,0
+1792299813751,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,454,165,9,9,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299813898,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,454,165,9,9,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299813998,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,454,165,9,9,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299814056,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,454,165,9,9,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299814081,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,9,9,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299814385,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,9,9,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299814667,12,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,240,145,9,9,http://127.0.0.1:8000/,12,0,2
+1792299814714,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,240,145,9,9,http://127.0.0.1:8000/,3,0,0
+1792299814731,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,240,145,9,9,http://127.0.0.1:8000/,4,0,0
+1792299814767,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,240,145,9,9,http://127.0.0.1:8000/,4,0,0
+1792299814914,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,240,145,9,9,http://127.0.0.1:8000/,3,0,0
+1792299815004,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,240,145,9,9,http://127.0.0.1:8000/,3,0,0
+1792299815065,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,9,9,http://127.0.0.1:8000/,3,0,0
+1792299815100,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,9,9,http://127.0.0.1:8000/,3,0,0
+1792299815391,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,9,9,http://127.0.0.1:8000/,3,0,0
+1792299815682,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,168,151,9,9,http://127.0.0.1:8000/health,4,0,0
+1792299815730,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,168,151,9,9,http://127.0.0.1:8000/health,4,0,0
+1792299815748,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,168,151,9,9,http://127.0.0.1:8000/health,3,0,0
+1792299815781,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,168,151,9,9,http://127.0.0.1:8000/health,3,0,0
+1792299815926,2,GET health,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,168,151,9,9,http://127.0.0.1:8000/health,2,0,0
+1792299816020,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,168,151,9,9,http://127.0.0.1:8000/health,3,0,0
+1792299816071,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,9,9,http://127.0.0.1:8000/health,3,0,0
+1792299816114,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,9,9,http://127.0.0.1:8000/health,3,0,0
+1792299816398,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,9,9,http://127.0.0.1:8000/health,3,0,0
+1792299816716,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299816737,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299816765,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299816798,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299816931,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299817025,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299817080,8,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,8,0,0
+1792299817118,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299817403,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299817666,6,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,240,145,10,10,http://127.0.0.1:8000/,6,0,2
+1792299817733,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299817746,11,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,240,145,10,10,http://127.0.0.1:8000/,11,0,0
+1792299817772,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299817817,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299817949,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299818032,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299818099,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299818129,2,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,10,10,http://127.0.0.1:8000/,2,0,0
+1792299818417,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299818673,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299818742,5,GET health,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,168,151,10,10,http://127.0.0.1:8000/health,5,0,0
+1792299818766,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299818783,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299818832,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299818965,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299819038,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299819115,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299819134,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299819432,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299819682,8,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,8,0,0
+1792299819748,8,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,8,0,0
+1792299819783,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299819798,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299819836,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299819972,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299820050,3,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,3,0,0
+1792299820120,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299820140,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299820438,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299820700,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299820766,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299820797,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299820816,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299820845,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299820981,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299821066,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299821132,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299821149,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299821451,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299821704,5,GET health,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,168,151,10,10,http://127.0.0.1:8000/health,5,0,0
+1792299821782,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299821814,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299821832,5,GET health,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299821864,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299821999,6,GET health,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,168,151,10,10,http://127.0.0.1:8000/health,6,0,0
+1792299822072,15,GET health,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,168,151,10,10,http://127.0.0.1:8000/health,15,0,0
+1792299822139,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299822163,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299822466,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299822716,7,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,7,0,0
+1792299822797,92,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,92,0,0
+1792299822840,148,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,148,0,0
+1792299822850,144,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,144,0,0
+1792299822883,114,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,114,0,0
+1792299823014,9,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,8,0,0
+1792299823100,25,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,25,0,0
+1792299823148,58,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,58,0,0
+1792299823179,93,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,93,0,0
+1792299823480,10,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,10,0,0
+1792299823737,7,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,240,145,10,10,http://127.0.0.1:8000/,7,0,0
+1792299823894,7,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,240,145,10,10,http://127.0.0.1:8000/,7,0,0
+1792299823999,7,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,240,145,10,10,http://127.0.0.1:8000/,7,0,0
+1792299823999,9,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,240,145,10,10,http://127.0.0.1:8000/,9,0,0
+1792299823999,10,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,240,145,10,10,http://127.0.0.1:8000/,10,0,0
+1792299824031,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299824139,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,240,145,10,10,http://127.0.0.1:8000/,5,0,0
+1792299824221,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299824284,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299824503,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299824753,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299824908,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299825016,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299825016,5,GET health,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,168,151,10,10,http://127.0.0.1:8000/health,5,0,0
+1792299825016,6,GET health,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,168,151,10,10,http://127.0.0.1:8000/health,6,0,0
+1792299825048,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299825156,2,GET health,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,168,151,10,10,http://127.0.0.1:8000/health,2,0,0
+1792299825234,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299825295,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,10,10,http://127.0.0.1:8000/health,2,0,0
+1792299825512,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299825760,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299825918,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299826026,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299826026,7,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,7,0,0
+1792299826026,8,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,8,0,0
+1792299826057,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299826170,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299826247,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299826309,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299826529,9,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,9,0,0
+1792299826769,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299826938,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,240,145,10,10,http://127.0.0.1:8000/,5,0,0
+1792299827033,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,240,145,10,10,http://127.0.0.1:8000/,5,0,0
+1792299827035,8,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,240,145,10,10,http://127.0.0.1:8000/,8,0,0
+1792299827048,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,240,145,10,10,http://127.0.0.1:8000/,5,0,0
+1792299827064,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,240,145,10,10,http://127.0.0.1:8000/,5,0,0
+1792299827187,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,240,145,10,10,http://127.0.0.1:8000/,5,0,0
+1792299827258,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299827319,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299827542,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299827775,5,GET health,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,168,151,10,10,http://127.0.0.1:8000/health,5,0,0
+1792299827946,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299828054,8,GET health,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,168,151,10,10,http://127.0.0.1:8000/health,8,0,0
+1792299828054,10,GET health,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,168,151,10,10,http://127.0.0.1:8000/health,10,0,0
+1792299828055,10,GET health,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,168,151,10,10,http://127.0.0.1:8000/health,10,0,0
+1792299828080,5,GET health,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,168,151,10,10,http://127.0.0.1:8000/health,5,0,0
+1792299828196,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299828277,5,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,10,10,http://127.0.0.1:8000/health,5,0,0
+1792299828328,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299828558,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299828784,7,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,7,0,0
+1792299828951,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299829067,10,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,10,0,0
+1792299829067,11,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,11,0,0
+1792299829067,12,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,12,0,0
+1792299829100,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299829201,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299829286,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299829333,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299829569,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299829800,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,240,145,10,10,http://127.0.0.1:8000/,5,0,0
+1792299829967,6,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,240,145,10,10,http://127.0.0.1:8000/,6,0,0
+1792299830083,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,240,145,10,10,http://127.0.0.1:8000/,5,0,0
+1792299830085,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299830083,8,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,240,145,10,10,http://127.0.0.1:8000/,8,0,0
+1792299830118,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299830218,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299830301,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299830353,2,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,10,10,http://127.0.0.1:8000/,2,0,0
+1792299830583,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299830817,5,GET health,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,168,151,10,10,http://127.0.0.1:8000/health,5,0,0
+1792299830981,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299831090,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299831104,11,GET health,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,168,151,10,10,http://127.0.0.1:8000/health,11,0,0
+1792299831108,8,GET health,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,168,151,10,10,http://127.0.0.1:8000/health,8,0,0
+1792299831130,16,GET health,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,168,151,10,10,http://127.0.0.1:8000/health,16,0,0
+1792299831234,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299831305,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299831368,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299831601,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299831835,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299832001,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299832103,8,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,8,0,0
+1792299832123,8,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,7,0,0
+1792299832123,8,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,8,0,0
+1792299832151,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299832239,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299832318,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299832375,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299832619,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299832851,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299833017,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299833114,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299833147,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299833147,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,240,145,10,10,http://127.0.0.1:8000/,5,0,0
+1792299833168,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299833254,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299833335,2,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,10,10,http://127.0.0.1:8000/,2,0,0
+1792299833389,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299833631,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299833867,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299834035,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299834119,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299834152,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299834167,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299834183,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299834268,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299834340,6,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,10,10,http://127.0.0.1:8000/health,6,0,0
+1792299834395,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299834639,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299834885,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299835051,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299835125,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299835169,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299835173,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299835188,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299835273,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299835356,3,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,3,0,0
+1792299835403,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299835653,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299835904,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299836070,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,240,145,10,10,http://127.0.0.1:8000/,5,0,0
+1792299836140,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299836187,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299836187,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,240,145,10,10,http://127.0.0.1:8000/,5,0,0
+1792299836202,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299836288,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299836370,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,10,10,http://127.0.0.1:8000/,2,0,0
+1792299836420,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299836669,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299836909,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299837087,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299837153,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299837202,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299837202,6,GET health,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,168,151,10,10,http://127.0.0.1:8000/health,6,0,0
+1792299837220,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299837304,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299837386,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299837436,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299837673,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299837919,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299838108,7,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299838170,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299838220,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299838221,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299838237,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299838320,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299838403,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299838451,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299838689,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299838928,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299839121,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299839176,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299839237,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299839237,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,240,145,10,10,http://127.0.0.1:8000/,5,0,0
+1792299839254,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299839337,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299839410,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299839458,2,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,10,10,http://127.0.0.1:8000/,2,0,0
+1792299839703,6,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,10,10,http://127.0.0.1:8000/,6,0,0
+1792299839939,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299840138,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299840186,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299840242,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299840256,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,168,151,10,10,http://127.0.0.1:8000/health,2,0,0
+1792299840271,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299840342,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299840415,2,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,10,10,http://127.0.0.1:8000/health,2,0,0
+1792299840474,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299840712,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299840944,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299841148,3,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,3,0,0
+1792299841191,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299841258,3,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,3,0,0
+1792299841273,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299841277,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299841356,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299841423,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299841479,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299841721,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299841954,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299842154,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,240,145,10,10,http://127.0.0.1:8000/,5,0,0
+1792299842200,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299842271,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299842290,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299842290,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,240,145,10,10,http://127.0.0.1:8000/,5,0,0
+1792299842371,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299842437,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299842490,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299842740,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299842959,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299843171,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299843205,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299843276,5,GET health,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,168,151,10,10,http://127.0.0.1:8000/health,5,0,0
+1792299843306,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299843306,5,GET health,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,168,151,10,10,http://127.0.0.1:8000/health,5,0,0
+1792299843376,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299843442,2,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,10,10,http://127.0.0.1:8000/health,2,0,0
+1792299843506,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,10,10,http://127.0.0.1:8000/health,2,0,0
+1792299843754,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299843971,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299844187,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299844222,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299844292,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299844320,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299844320,7,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,7,0,0
+1792299844382,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299844457,3,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,3,0,0
+1792299844510,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299844772,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299844989,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299845204,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299845238,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299845305,9,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,240,145,10,10,http://127.0.0.1:8000/,9,0,0
+1792299845327,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299845328,5,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,240,145,10,10,http://127.0.0.1:8000/,5,0,0
+1792299845391,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299845472,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299845515,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299845788,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299846003,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299846207,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299846242,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299846321,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299846337,7,GET health,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,168,151,10,10,http://127.0.0.1:8000/health,7,0,0
+1792299846337,10,GET health,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,168,151,10,10,http://127.0.0.1:8000/health,9,0,0
+1792299846398,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,168,151,10,10,http://127.0.0.1:8000/health,4,0,0
+1792299846476,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299846518,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299846804,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,168,151,10,10,http://127.0.0.1:8000/health,3,0,0
+1792299847018,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299847221,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299847248,3,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,3,0,0
+1792299847336,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299847346,3,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,3,0,0
+1792299847359,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299847406,6,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,6,0,0
+1792299847491,5,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,5,0,0
+1792299847536,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299847820,4,GET device status,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,454,165,10,10,http://127.0.0.1:8000/api/v1/device/status,4,0,0
+1792299848025,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299848238,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299848256,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299848357,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299848357,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299848371,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299848422,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,240,145,10,10,http://127.0.0.1:8000/,2,0,0
+1792299848505,8,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,240,145,10,10,http://127.0.0.1:8000/,8,0,0
+1792299848554,3,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,240,145,10,10,http://127.0.0.1:8000/,3,0,0
+1792299848838,4,GET platform root,200,OK,10 users 30 second ramp 60 second duration 1-1,text,true,,240,145,10,10,http://127.0.0.1:8000/,4,0,0
+1792299849038,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-10,text,true,,168,151,9,9,http://127.0.0.1:8000/health,4,0,0
+1792299849256,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-9,text,true,,168,151,8,8,http://127.0.0.1:8000/health,4,0,0
+1792299849262,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-7,text,true,,168,151,7,7,http://127.0.0.1:8000/health,3,0,0
+1792299849373,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-6,text,true,,168,151,6,6,http://127.0.0.1:8000/health,3,0,0
+1792299849373,5,GET health,200,OK,10 users 30 second ramp 60 second duration 1-5,text,true,,168,151,6,6,http://127.0.0.1:8000/health,4,0,0
+1792299849376,4,GET health,200,OK,10 users 30 second ramp 60 second duration 1-8,text,true,,168,151,4,4,http://127.0.0.1:8000/health,4,0,0
+1792299849426,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-4,text,true,,168,151,3,3,http://127.0.0.1:8000/health,2,0,0
+1792299849525,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-3,text,true,,168,151,2,2,http://127.0.0.1:8000/health,3,0,0
+1792299849572,3,GET health,200,OK,10 users 30 second ramp 60 second duration 1-2,text,true,,168,151,1,1,http://127.0.0.1:8000/health,3,0,0

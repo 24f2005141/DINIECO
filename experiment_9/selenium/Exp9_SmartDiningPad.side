@@ -1,0 +1,266 @@
+{
+  "id": "62adabb4-287a-4142-b65d-686e5c0e998c",
+  "version": "2.0",
+  "name": "Exp9_SmartDiningPad",
+  "url": "http://127.0.0.1:8080",
+  "tests": [
+    {
+      "id": "a188a6b8-2c57-4c07-ac75-3188e15fc815",
+      "name": "SEL-01 Unauthenticated app shell",
+      "commands": [
+        {
+          "id": "9c88a46d-ef60-4d7f-a383-3b345700e85f",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "fe5f72ea-59b7-4274-af35-1bc03275961b",
+          "comment": "",
+          "command": "assertTitle",
+          "target": "dinieco",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "89813763-aa34-4b4f-b277-d06520d95256",
+          "comment": "",
+          "command": "waitForElementPresent",
+          "target": "css=flutter-view",
+          "targets": [],
+          "value": "30000"
+        },
+        {
+          "id": "a6502320-c10a-4808-9d8b-02bc4c8019cf",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "css=flt-semantics-placeholder[aria-label='Enable accessibility']",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "784e44cc-6b18-449c-bffc-889330facf58",
+      "name": "SEL-02 Backend health response",
+      "commands": [
+        {
+          "id": "c080e13b-585e-40dc-9e21-c490baa9a2f5",
+          "comment": "",
+          "command": "open",
+          "target": "http://127.0.0.1:8000/health",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "ff540079-9440-404e-b99c-b385567c9a68",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=pre",
+          "targets": [],
+          "value": "{\"status\":\"healthy\",\"database\":\"connected\"}"
+        },
+        {
+          "id": "499e4f83-f2b5-4a41-8033-2d9ef21853c9",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=pre",
+          "targets": [],
+          "value": "{\"status\":\"healthy\",\"database\":\"connected\"}"
+        }
+      ]
+    },
+    {
+      "id": "9cf40ebd-c677-46a1-8bc2-b11fa097c00e",
+      "name": "SEL-03 Protected profile rejects anonymous visitor",
+      "commands": [
+        {
+          "id": "e4797abb-adf5-4ff8-ba2c-686de9e4790f",
+          "comment": "",
+          "command": "open",
+          "target": "http://127.0.0.1:8000/api/v1/auth/me",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "49b5c184-9060-4e99-bf8b-26033139f121",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=pre",
+          "targets": [],
+          "value": "{\"detail\":\"Authentication credentials required\"}"
+        }
+      ]
+    },
+    {
+      "id": "5413db0f-fa10-40f5-b612-ed4eb8ad9edd",
+      "name": "SEL-04 Invalid login validation",
+      "commands": [
+        {
+          "id": "693b2d8d-c7e7-4203-a821-6d1736874435",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "4f54f650-3029-4c61-b427-0cc2527205ab",
+          "comment": "Wait for Flutter accessibility bootstrap",
+          "command": "waitForElementPresent",
+          "target": "css=flt-semantics-placeholder",
+          "targets": [],
+          "value": "30000"
+        },
+        {
+          "id": "b6d761ef-0c27-44b9-96af-7f3cb81a9a65",
+          "comment": "Show full login form",
+          "command": "setWindowSize",
+          "target": "1280x900",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "217fedec-2dad-4910-8642-b0f48e46da44",
+          "comment": "",
+          "command": "executeScript",
+          "target": "document.querySelector('flt-semantics-placeholder').click();",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "afbd6f5a-265c-4345-95b0-c074f7b34ab5",
+          "comment": "",
+          "command": "waitForElementPresent",
+          "target": "xpath=//*[@aria-label='Email Address']",
+          "targets": [],
+          "value": "30000"
+        },
+        {
+          "id": "6d0b15b9-0da1-4d1e-a55e-c6d9b695f1fe",
+          "comment": "",
+          "command": "type",
+          "target": "xpath=//*[@aria-label='Email Address']",
+          "targets": [],
+          "value": "exp9-nonexistent@example.invalid"
+        },
+        {
+          "id": "5bc36334-eb66-4487-815c-4fcde0451de0",
+          "comment": "",
+          "command": "type",
+          "target": "xpath=//*[@aria-label='Password']",
+          "targets": [],
+          "value": "invalid-test-value"
+        },
+        {
+          "id": "cb2ed4d8-c549-4141-a7f7-dadceabfcfce",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//flt-semantics[@role='button' and normalize-space()='Sign In']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "ff589991-97f6-48c0-bf2a-063e387346f7",
+          "comment": "",
+          "command": "waitForElementPresent",
+          "target": "xpath=//*[contains(text(),'Incorrect email or password')]",
+          "targets": [],
+          "value": "10000"
+        }
+      ]
+    },
+    {
+      "id": "ae24d882-1aae-4d6a-9a3f-d63814dd01bf",
+      "name": "SEL-05 Empty login validation",
+      "commands": [
+        {
+          "id": "354cd037-6867-4e52-b494-0e4e0fb82707",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "9ed4c6d0-2716-41ad-8b13-5a4489ff9c60",
+          "comment": "Wait for Flutter accessibility bootstrap",
+          "command": "waitForElementPresent",
+          "target": "css=flt-semantics-placeholder",
+          "targets": [],
+          "value": "30000"
+        },
+        {
+          "id": "3bc7f215-dd4d-4d3e-b872-f43108855020",
+          "comment": "Show full login form",
+          "command": "setWindowSize",
+          "target": "1280x900",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "703d944a-258c-4d6b-a0a2-85009ba1055e",
+          "comment": "",
+          "command": "executeScript",
+          "target": "document.querySelector('flt-semantics-placeholder').click();",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "613e380d-41c0-4262-abcc-e9557e2087fe",
+          "comment": "",
+          "command": "waitForElementPresent",
+          "target": "xpath=//flt-semantics[@role='button' and normalize-space()='Sign In']",
+          "targets": [],
+          "value": "30000"
+        },
+        {
+          "id": "64e113fa-647f-4290-9054-7e5fc611fde3",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//flt-semantics[@role='button' and normalize-space()='Sign In']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "3db67f45-61d4-4079-aa15-b99637ccef01",
+          "comment": "",
+          "command": "waitForElementPresent",
+          "target": "xpath=//*[contains(text(),'Email is required')]",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "a9797551-cf1e-4079-a1d9-3ccac0346a01",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "xpath=//*[contains(text(),'Password is required')]",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "768d1b4e-dbab-4591-a32e-c5885ef86ce9",
+      "name": "Exp9 functional smoke and validation",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "a188a6b8-2c57-4c07-ac75-3188e15fc815",
+        "784e44cc-6b18-449c-bffc-889330facf58",
+        "9cf40ebd-c677-46a1-8bc2-b11fa097c00e",
+        "5413db0f-fa10-40f5-b612-ed4eb8ad9edd",
+        "ae24d882-1aae-4d6a-9a3f-d63814dd01bf"
+      ]
+    }
+  ],
+  "urls": [
+    "http://127.0.0.1:8080"
+  ],
+  "plugins": []
+}

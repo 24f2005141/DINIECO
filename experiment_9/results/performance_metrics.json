@@ -1,0 +1,72 @@
+{
+  "overall": {
+    "samples": 454,
+    "successful": 454,
+    "failed": 0,
+    "average_ms": 7.86,
+    "median_ms": 4.0,
+    "p90_ms": 9.7,
+    "min_ms": 2,
+    "max_ms": 148,
+    "average_latency_ms": 7.77,
+    "p90_latency_ms": 9.0,
+    "error_percent": 0.0,
+    "throughput_requests_per_second": 7.73,
+    "time_span_seconds": 58.739,
+    "received_bytes_per_second": 2194.49,
+    "sent_bytes_per_second": 1185.82
+  },
+  "by_sampler": {
+    "GET platform root": {
+      "samples": 155,
+      "successful": 155,
+      "failed": 0,
+      "average_ms": 5.17,
+      "median_ms": 4,
+      "p90_ms": 8.0,
+      "min_ms": 2,
+      "max_ms": 68,
+      "average_latency_ms": 5.08,
+      "p90_latency_ms": 8.0,
+      "error_percent": 0.0,
+      "throughput_requests_per_second": 2.67,
+      "time_span_seconds": 58.006,
+      "received_bytes_per_second": 641.31,
+      "sent_bytes_per_second": 387.46
+    },
+    "GET health": {
+      "samples": 154,
+      "successful": 154,
+      "failed": 0,
+      "average_ms": 5.58,
+      "median_ms": 4.0,
+      "p90_ms": 7.0,
+      "min_ms": 2,
+      "max_ms": 129,
+      "average_latency_ms": 5.49,
+      "p90_latency_ms": 7.0,
+      "error_percent": 0.0,
+      "throughput_requests_per_second": 2.67,
+      "time_span_seconds": 57.65,
+      "received_bytes_per_second": 448.78,
+      "sent_bytes_per_second": 403.37
+    },
+    "GET device status": {
+      "samples": 145,
+      "successful": 145,
+      "failed": 0,
+      "average_ms": 13.15,
+      "median_ms": 5,
+      "p90_ms": 22.8,
+      "min_ms": 3,
+      "max_ms": 148,
+      "average_latency_ms": 13.07,
+      "p90_latency_ms": 22.8,
+      "error_percent": 0.0,
+      "throughput_requests_per_second": 2.64,
+      "time_span_seconds": 54.882,
+      "received_bytes_per_second": 1199.48,
+      "sent_bytes_per_second": 435.94
+    }
+  }
+}

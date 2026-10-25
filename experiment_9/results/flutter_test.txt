@@ -1,0 +1,15 @@
+00:00 +0: loading C:/MIRTTUL/Projects/Dinieco/test/ai_nutrition_workflow_test.dart
+00:00 +0: C:/MIRTTUL/Projects/Dinieco/test/ai_nutrition_workflow_test.dart: Test Dual Weight Mode Toggle and Manual Weight Input
+00:04 +1: C:/MIRTTUL/Projects/Dinieco/test/ai_nutrition_workflow_test.dart: Test Dual Weight Mode Toggle and Manual Weight Input
+00:04 +2: C:/MIRTTUL/Projects/Dinieco/test/ai_nutrition_workflow_test.dart: Test Dual Weight Mode Toggle and Manual Weight Input
+00:05 +3: C:/MIRTTUL/Projects/Dinieco/test/ai_nutrition_workflow_test.dart: Test Dual Weight Mode Toggle and Manual Weight Input
+00:05 +4: C:/MIRTTUL/Projects/Dinieco/test/ai_nutrition_workflow_test.dart: Test Dual Weight Mode Toggle and Manual Weight Input
+00:05 +5: C:/MIRTTUL/Projects/Dinieco/test/ai_nutrition_workflow_test.dart: Test Dual Weight Mode Toggle and Manual Weight Input
+00:06 +6: C:/MIRTTUL/Projects/Dinieco/test/ai_nutrition_workflow_test.dart: Test Dual Weight Mode Toggle and Manual Weight Input
+00:06 +7: C:/MIRTTUL/Projects/Dinieco/test/meal_flow_test.dart: Test Hardware Diagnostics & Calibration wizard step execution
+00:06 +8: C:/MIRTTUL/Projects/Dinieco/test/meal_flow_test.dart: Test Hardware Diagnostics & Calibration wizard step execution
+00:06 +9: C:/MIRTTUL/Projects/Dinieco/test/meal_flow_test.dart: Test Hardware Diagnostics & Calibration wizard step execution
+00:06 +10: C:/MIRTTUL/Projects/Dinieco/test/navigation_test.dart: Test navigate to Start Active Session
+00:06 +11: C:/MIRTTUL/Projects/Dinieco/test/navigation_test.dart: Test interactive CTA transitions (Start Meal button & Post-Meal Summary)
+00:08 +12: C:/MIRTTUL/Projects/Dinieco/test/widget_test.dart: DiniecoApp smoke test - unauthenticated opens LoginScreen
+00:10 +13: All tests passed!
