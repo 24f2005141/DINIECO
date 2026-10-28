@@ -12,9 +12,21 @@ class ApiService {
   final AuthService authService;
 
   ApiService({
-    this.baseUrl = 'http://127.0.0.1:8000/api/v1',
+    String? baseUrl,
     AuthService? auth,
-  }) : authService = auth ?? AuthService(baseUrl: baseUrl);
+  })  : baseUrl = baseUrl ??
+            const String.fromEnvironment(
+              'API_BASE_URL',
+              defaultValue: 'http://16.112.158.28:8000/api/v1',
+            ),
+        authService = auth ??
+            AuthService(
+              baseUrl: baseUrl ??
+                  const String.fromEnvironment(
+                    'API_BASE_URL',
+                    defaultValue: 'http://16.112.158.28:8000/api/v1',
+                  ),
+            );
 
   Future<Map<String, String>> _getHeaders({bool isJson = true}) async {
     final headers = <String, String>{};
@@ -306,7 +318,7 @@ class ApiService {
         'total_weight_g': (data['total_weight_g'] as num?)?.toDouble() ?? padWeight,
         'net_food_weight_g': (data['net_food_weight_g'] as num?)?.toDouble() ?? padWeight,
         'weight_source': data['weight_source'] as String? ?? weightSource,
-        'ai_model': data['ai_model'] as String? ?? 'gemini-2.5-flash',
+        'ai_model': data['ai_model'] as String? ?? 'gemini-3.1-flash-lite',
         'ai_verified': data['ai_verified'] as bool? ?? false,
         'is_stabilized': data['is_stabilized'] as bool? ?? true,
         'total_calories': (data['total_calories'] as num?)?.toInt() ?? 0,
@@ -318,6 +330,24 @@ class ApiService {
     }
 
     throw Exception('AI Vision service is temporarily unavailable. Check backend connection.');
+  }
+
+  // Nutrition Lookup & Cache
+  Future<Map<String, dynamic>?> lookupFoodNutrition(String query) async {
+    final encoded = Uri.encodeComponent(query);
+    final data = await _get('/nutrition/lookup?query=$encoded');
+    if (data != null && data is Map<String, dynamic>) {
+      return data;
+    }
+    return null;
+  }
+
+  Future<Map<String, dynamic>?> getNutritionCacheStats() async {
+    final data = await _get('/nutrition/cache');
+    if (data != null && data is Map<String, dynamic>) {
+      return data;
+    }
+    return null;
   }
 
   // Meals

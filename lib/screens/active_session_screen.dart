@@ -1239,20 +1239,62 @@ class _ActiveSessionScreenState extends State<ActiveSessionScreen> {
             const SizedBox(height: 10),
 
             // List of Detected Components with Edit Weights
-            ListView.separated(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: components.length,
-              separatorBuilder: (context, index) => const SizedBox(height: 8),
-              itemBuilder: (context, index) {
-                return FoodComponentItemWidget(
-                  component: components[index],
-                  onWeightChanged: (newWeight) {
-                    provider.updateComponentWeight(index, newWeight);
-                  },
-                );
-              },
-            ),
+            if (components.isEmpty)
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+                decoration: BoxDecoration(
+                  color: DiniecoColors.surfaceContainerLowest,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: DiniecoColors.outlineVariant.withValues(alpha: 0.5),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.camera_alt_outlined,
+                      size: 32,
+                      color: DiniecoColors.outline.withValues(alpha: 0.7),
+                    ),
+                    const SizedBox(height: 8),
+                    const Text(
+                      'No Food Components Detected Yet',
+                      style: TextStyle(
+                        fontFamily: 'Manrope',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: DiniecoColors.onSurfaceVariant,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    const Text(
+                      'Snap or upload a meal photo to detect food items & live nutrition',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Work Sans',
+                        fontSize: 12,
+                        color: DiniecoColors.outline,
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            else
+              ListView.separated(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: components.length,
+                separatorBuilder: (context, index) => const SizedBox(height: 8),
+                itemBuilder: (context, index) {
+                  return FoodComponentItemWidget(
+                    component: components[index],
+                    onWeightChanged: (newWeight) {
+                      provider.updateComponentWeight(index, newWeight);
+                    },
+                  );
+                },
+              ),
 
             const SizedBox(height: 20),
 
@@ -2831,8 +2873,8 @@ class _ActiveSessionScreenState extends State<ActiveSessionScreen> {
                   const SizedBox(width: 4),
                   Text(
                     provider.detectedComponents.isEmpty
-                        ? 'Awaiting Analysis'
-                        : (provider.aiVerified ? 'Live Gemini 2.5' : 'Catalog Estimate'),
+                        ? 'Awaiting Photo'
+                        : (provider.aiVerified ? 'Live Gemini AI' : 'Catalog Estimate'),
                     style: const TextStyle(
                       fontFamily: 'Space Grotesk',
                       fontSize: 10,

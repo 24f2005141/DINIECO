@@ -72,6 +72,13 @@ class VisionComponent(BaseModel):
     uncertainty_max_kcal: int = 0
     preparation_style: str = "Cooked"
     icon_name: str = "restaurant"
+    calories_100g: float = 0.0
+    protein_100g: float = 0.0
+    carbs_100g: float = 0.0
+    fat_100g: float = 0.0
+    fiber_100g: float = 0.0
+    sodium_100g: float = 0.0
+    source: str = "local_cache"
 
 class VisionAnalyzeRequest(BaseModel):
     image_base64: Optional[str] = None
@@ -79,7 +86,7 @@ class VisionAnalyzeRequest(BaseModel):
     pad_weight_g: float = 842.0
     weight_source: str = "device"  # "device" or "manual"
     tare_weight_g: float = 356.0
-    dish_hint: Optional[str] = "Vegetable Rice Bowl"
+    dish_hint: Optional[str] = None
 
 class VisionAnalyzeResponse(BaseModel):
     dish_name: str
@@ -87,7 +94,7 @@ class VisionAnalyzeResponse(BaseModel):
     total_weight_g: float
     net_food_weight_g: float
     weight_source: str = "device"
-    ai_model: str = "gemini-3.8-flash"
+    ai_model: str = "gemini-3.1-flash-lite"
     ai_verified: bool = False
     is_stabilized: bool = True
     total_calories: int = 620
@@ -108,6 +115,25 @@ class NutritionResponse(BaseModel):
     total_fiber_g: float
     total_sodium_mg: float
 
+class NutritionLookupResponse(BaseModel):
+    name: str
+    calories_100g: float
+    protein_100g: float
+    carbs_100g: float
+    fat_100g: float
+    fiber_100g: float = 0.0
+    sodium_100g: float = 0.0
+    preparation: str = "Standard"
+    icon: str = "restaurant"
+    source: str = "local_cache"
+
+class NutritionCacheStatsResponse(BaseModel):
+    total_items: int
+    hits: int
+    misses: int
+    cache_file: str
+    hit_ratio: float
+
 class ImageUploadResponse(BaseModel):
     image_id: str
     image_url: str
@@ -119,7 +145,7 @@ class ImageUploadResponse(BaseModel):
 
 # Meals & Sessions
 class MealCreateRequest(BaseModel):
-    meal_name: str = "Vegetable Rice Bowl"
+    meal_name: str = "Dining Meal"
     initial_weight_g: float = 842.0
     remaining_weight_g: float = 210.0
     weight_source: str = "device"

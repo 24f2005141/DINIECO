@@ -8,7 +8,12 @@ class AuthService {
   static const String _tokenKey = 'dinieco_jwt_token';
   static const String _userKey = 'dinieco_user_data';
 
-  AuthService({this.baseUrl = 'http://127.0.0.1:8000/api/v1'});
+  AuthService({String? baseUrl})
+      : baseUrl = baseUrl ??
+            const String.fromEnvironment(
+              'API_BASE_URL',
+              defaultValue: 'http://16.112.158.28:8000/api/v1',
+            );
 
   Future<String?> getToken() async {
     final prefs = await SharedPreferences.getInstance();

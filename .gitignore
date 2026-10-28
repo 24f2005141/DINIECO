@@ -82,3 +82,5 @@ jmeter.log
 brave_stitch*
 stitch_*
 test.png
+output/
+*.pem

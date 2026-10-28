@@ -1,0 +1,284 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  DINIECO Smart Dining & Food Waste Platform - Production AWS Free Tier Deployment Template.
+  Deploys FastAPI REST backend, SQLite persistent database, and AI nutrition engine on an Amazon EC2 t3.micro instance
+  with a 30 GB gp3 persistent EBS volume (100% covered under the AWS Free Tier, 750 hours/month).
+
+Parameters:
+  InstanceType:
+    Type: String
+    Default: t3.micro
+    AllowedValues:
+      - t3.micro
+      - t2.micro
+      - t4g.micro
+    Description: EC2 Instance Type eligible for AWS Free Tier (750 hours/month free).
+
+  KeyName:
+    Type: String
+    Default: 'agent-amar-key'
+    Description: (Optional) Name of an existing EC2 KeyPair to enable SSH access.
+
+  S3BucketName:
+    Type: String
+    Default: 'dinieco-deploy-457778953440'
+    Description: S3 bucket containing the dinieco-backend.tar.gz archive.
+
+  S3ObjectKey:
+    Type: String
+    Default: 'dinieco-backend.tar.gz'
+    Description: S3 object key for the backend tarball.
+
+  LatestAmiId:
+    Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
+    Default: '/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64'
+    Description: Automatically fetches the latest official Amazon Linux 2023 AMI for the selected region.
+
+Conditions:
+  HasKeyName: !Not [!Equals [!Ref KeyName, '']]
+
+Resources:
+  # -------------------------------------------------------------
+  # Networking: VPC, Internet Gateway, Subnet, Route Table
+  # -------------------------------------------------------------
+  DiniecoVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.2.0.0/16
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: Dinieco-VPC
+
+  DiniecoInternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: Dinieco-IGW
+
+  DiniecoVPCGatewayAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref DiniecoVPC
+      InternetGatewayId: !Ref DiniecoInternetGateway
+
+  DiniecoPublicSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref DiniecoVPC
+      CidrBlock: 10.2.1.0/24
+      MapPublicIpOnLaunch: true
+      AvailabilityZone: !Select [0, !GetAZs '']
+      Tags:
+        - Key: Name
+          Value: Dinieco-PublicSubnet
+
+  DiniecoRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref DiniecoVPC
+      Tags:
+        - Key: Name
+          Value: Dinieco-PublicRouteTable
+
+  DiniecoPublicRoute:
+    Type: AWS::EC2::Route
+    DependsOn: DiniecoVPCGatewayAttachment
+    Properties:
+      RouteTableId: !Ref DiniecoRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref DiniecoInternetGateway
+
+  DiniecoSubnetRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref DiniecoPublicSubnet
+      RouteTableId: !Ref DiniecoRouteTable
+
+  # -------------------------------------------------------------
+  # Security Group (HTTP 80, FastAPI 8000, SSH 22)
+  # -------------------------------------------------------------
+  DiniecoSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security group for DINIECO FastAPI Backend and Database
+      VpcId: !Ref DiniecoVPC
+      SecurityGroupIngress:
+        # Standard HTTP
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+          Description: Allow public HTTP traffic
+        # Direct FastAPI Port
+        - IpProtocol: tcp
+          FromPort: 8000
+          ToPort: 8000
+          CidrIp: 0.0.0.0/0
+          Description: Allow direct DINIECO FastAPI traffic
+        # SSH access
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+          Description: Allow SSH management
+      SecurityGroupEgress:
+        - IpProtocol: -1
+          CidrIp: 0.0.0.0/0
+          Description: Allow all outbound traffic (for Gemini API, USDA API, pip packages)
+      Tags:
+        - Key: Name
+          Value: Dinieco-SecurityGroup
+
+  # -------------------------------------------------------------
+  # IAM Role & Instance Profile for S3 and SSM
+  # -------------------------------------------------------------
+  DiniecoEC2Role:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: DiniecoEC2Role-FreeTier
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
+      Policies:
+        - PolicyName: DiniecoS3DownloadPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:GetObject
+                Resource: !Sub 'arn:aws:s3:::${S3BucketName}/*'
+              - Effect: Allow
+                Action:
+                  - s3:ListBucket
+                Resource: !Sub 'arn:aws:s3:::${S3BucketName}'
+      Tags:
+        - Key: Name
+          Value: Dinieco-EC2Role
+
+  DiniecoInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      InstanceProfileName: DiniecoInstanceProfile-FreeTier
+      Roles:
+        - !Ref DiniecoEC2Role
+
+  # -------------------------------------------------------------
+  # EC2 Free Tier Instance with Persistent 30 GB EBS Storage
+  # -------------------------------------------------------------
+  DiniecoInstance:
+    Type: AWS::EC2::Instance
+    DependsOn: DiniecoPublicRoute
+    Properties:
+      InstanceType: !Ref InstanceType
+      ImageId: !Ref LatestAmiId
+      SubnetId: !Ref DiniecoPublicSubnet
+      SecurityGroupIds:
+        - !Ref DiniecoSecurityGroup
+      IamInstanceProfile: !Ref DiniecoInstanceProfile
+      KeyName: !If [HasKeyName, !Ref KeyName, !Ref 'AWS::NoValue']
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: 30 # 30 GB Free Tier maximum
+            VolumeType: gp3
+            DeleteOnTermination: false # Preserve SQLite database & uploaded meal photos
+            Encrypted: true
+      Tags:
+        - Key: Name
+          Value: Dinieco-Backend-FreeTier
+        - Key: Project
+          Value: Dinieco
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          set -e
+          exec > /var/log/dinieco-bootstrap.log 2>&1
+
+          echo "=== 1. Updating system and installing dependencies ==="
+          dnf update -y
+          dnf install -y python3.11 python3.11-pip python3.11-devel gcc libjpeg-turbo-devel zlib-devel iptables-services sqlite awscli
+
+          echo "=== 2. Setting up directory structure ==="
+          mkdir -p /opt/dinieco
+          cd /opt/dinieco
+
+          echo "=== 3. Downloading backend code from S3 ==="
+          aws s3 cp s3://${S3BucketName}/${S3ObjectKey} /tmp/dinieco-backend.tar.gz --region ${AWS::Region}
+          tar -xzf /tmp/dinieco-backend.tar.gz -C /opt/dinieco
+          rm -f /tmp/dinieco-backend.tar.gz
+
+          echo "=== 4. Installing Python dependencies ==="
+          python3.11 -m pip install --upgrade pip
+          python3.11 -m pip install -r /opt/dinieco/requirements.txt
+
+          echo "=== 5. Configuring port 80 -> 8000 forwarding ==="
+          iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8000
+          service iptables save || true
+          systemctl enable iptables || true
+          systemctl start iptables || true
+
+          echo "=== 6. Creating systemd daemon for DINIECO FastAPI ==="
+          cat << 'EOF' > /etc/systemd/system/dinieco.service
+          [Unit]
+          Description=DINIECO Smart Dining & Food Waste Platform FastAPI Daemon
+          After=network.target
+
+          [Service]
+          Type=simple
+          User=root
+          WorkingDirectory=/opt/dinieco
+          ExecStart=/usr/bin/python3.11 -m uvicorn app.main:app --host 0.0.0.0 --port 8000
+          Restart=always
+          RestartSec=5
+          Environment=PORT=8000
+          EnvironmentFile=/opt/dinieco/.env
+
+          [Install]
+          WantedBy=multi-user.target
+          EOF
+
+          echo "=== 7. Enabling and starting DINIECO service ==="
+          systemctl daemon-reload
+          systemctl enable dinieco.service
+          systemctl start dinieco.service
+
+          echo "=== DINIECO Backend Bootstrap Complete ==="
+
+Outputs:
+  InstanceId:
+    Description: Instance ID of the deployed EC2 Free Tier Server
+    Value: !Ref DiniecoInstance
+
+  PublicIp:
+    Description: Public IPv4 Address of the DINIECO Backend Server
+    Value: !GetAtt DiniecoInstance.PublicIp
+
+  PublicDnsName:
+    Description: Public DNS Name
+    Value: !GetAtt DiniecoInstance.PublicDnsName
+
+  BackendApiUrl:
+    Description: Direct Port 8000 FastAPI Base URL
+    Value: !Sub 'http://${DiniecoInstance.PublicIp}:8000/api/v1'
+
+  StandardHttpApiUrl:
+    Description: Standard Port 80 HTTP API Base URL
+    Value: !Sub 'http://${DiniecoInstance.PublicIp}/api/v1'
+
+  SwaggerDocsUrl:
+    Description: Interactive Swagger / OpenAPI Documentation URL
+    Value: !Sub 'http://${DiniecoInstance.PublicIp}:8000/docs'
+
+  HealthCheckUrl:
+    Description: Public Health Check URL
+    Value: !Sub 'http://${DiniecoInstance.PublicIp}:8000/health'

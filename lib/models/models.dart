@@ -39,6 +39,13 @@ class FoodComponentItem {
   int uncertaintyMaxKcal;
   String preparationStyle;
   final String iconName;
+  final double calories100g;
+  final double protein100g;
+  final double carbs100g;
+  final double fat100g;
+  final double fiber100g;
+  final double sodium100g;
+  final String source;
 
   FoodComponentItem({
     required this.name,
@@ -55,6 +62,13 @@ class FoodComponentItem {
     this.uncertaintyMaxKcal = 0,
     this.preparationStyle = 'Cooked',
     this.iconName = 'restaurant',
+    this.calories100g = 0.0,
+    this.protein100g = 0.0,
+    this.carbs100g = 0.0,
+    this.fat100g = 0.0,
+    this.fiber100g = 0.0,
+    this.sodium100g = 0.0,
+    this.source = 'local_cache',
   });
 
   factory FoodComponentItem.fromJson(Map<String, dynamic> json) {
@@ -73,6 +87,13 @@ class FoodComponentItem {
       uncertaintyMaxKcal: (json['uncertainty_max_kcal'] as num?)?.toInt() ?? 0,
       preparationStyle: json['preparation_style'] as String? ?? 'Cooked',
       iconName: json['icon_name'] as String? ?? 'restaurant',
+      calories100g: (json['calories_100g'] as num?)?.toDouble() ?? 0.0,
+      protein100g: (json['protein_100g'] as num?)?.toDouble() ?? 0.0,
+      carbs100g: (json['carbs_100g'] as num?)?.toDouble() ?? 0.0,
+      fat100g: (json['fat_100g'] as num?)?.toDouble() ?? 0.0,
+      fiber100g: (json['fiber_100g'] as num?)?.toDouble() ?? 0.0,
+      sodium100g: (json['sodium_100g'] as num?)?.toDouble() ?? 0.0,
+      source: json['source'] as String? ?? 'local_cache',
     );
   }
 
@@ -92,6 +113,13 @@ class FoodComponentItem {
       'uncertainty_max_kcal': uncertaintyMaxKcal,
       'preparation_style': preparationStyle,
       'icon_name': iconName,
+      'calories_100g': calories100g,
+      'protein_100g': protein100g,
+      'carbs_100g': carbs100g,
+      'fat_100g': fat100g,
+      'fiber_100g': fiber100g,
+      'sodium_100g': sodium100g,
+      'source': source,
     };
   }
 }

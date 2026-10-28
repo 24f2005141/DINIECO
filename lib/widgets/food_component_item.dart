@@ -16,18 +16,24 @@ class FoodComponentItemWidget extends StatelessWidget {
 
   IconData _getIconForName(String name) {
     final lower = name.toLowerCase();
-    if (lower.contains('rice') || lower.contains('grain')) {
+    if (lower.contains('papaya') || lower.contains('cucumber') || lower.contains('fruit') ||
+        lower.contains('apple') || lower.contains('banana') || lower.contains('melon') ||
+        lower.contains('berry') || lower.contains('orange')) {
+      return Icons.eco;
+    } else if (lower.contains('rice') || lower.contains('grain') || lower.contains('oats')) {
       return Icons.rice_bowl;
     } else if (lower.contains('dal') || lower.contains('soup') || lower.contains('curry')) {
       return Icons.soup_kitchen;
     } else if (lower.contains('vegetable') || lower.contains('sabzi')) {
       return Icons.eco;
-    } else if (lower.contains('paneer') || lower.contains('protein') || lower.contains('chicken')) {
+    } else if (lower.contains('paneer') || lower.contains('protein') || lower.contains('chicken') || lower.contains('egg')) {
       return Icons.egg;
-    } else if (lower.contains('salad') || lower.contains('kachumber')) {
+    } else if (lower.contains('salad') || lower.contains('kachumber') || lower.contains('greens')) {
       return Icons.grass;
-    } else if (lower.contains('roti') || lower.contains('bread') || lower.contains('naan')) {
+    } else if (lower.contains('roti') || lower.contains('bread') || lower.contains('naan') || lower.contains('chapati')) {
       return Icons.bakery_dining;
+    } else if (lower.contains('curd') || lower.contains('yogurt') || lower.contains('milk')) {
+      return Icons.local_cafe;
     }
     return Icons.restaurant;
   }

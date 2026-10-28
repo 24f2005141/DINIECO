@@ -320,6 +320,10 @@ class DiniecoProvider extends ChangeNotifier {
 
   List<FoodComponentItem> _detectedComponents = [];
   List<FoodComponentItem> get detectedComponents => _detectedComponents;
+  set detectedComponents(List<FoodComponentItem> comps) {
+    _detectedComponents = comps;
+    notifyListeners();
+  }
 
   List<MealRecord> _meals = [];
   List<MealRecord> get meals => _meals;
@@ -454,23 +458,42 @@ class DiniecoProvider extends ChangeNotifier {
 
   void _updateNutrientValuesForComponent(FoodComponentItem comp) {
     final factor = comp.weightG / 100.0;
-    final name = comp.name.toLowerCase();
+    
+    // 1. If component already has verified per-100g nutrients from cache or vision, use them directly
+    double c100 = comp.calories100g;
+    double p100 = comp.protein100g;
+    double cb100 = comp.carbs100g;
+    double f100 = comp.fat100g;
 
-    double c100 = 120.0, p100 = 4.0, cb100 = 18.0, f100 = 3.5;
-    if (name.contains('rice')) {
-      c100 = 130.0; p100 = 2.7; cb100 = 28.2; f100 = 0.3;
-    } else if (name.contains('dal')) {
-      c100 = 125.0; p100 = 6.8; cb100 = 18.0; f100 = 2.9;
-    } else if (name.contains('paneer')) {
-      c100 = 268.0; p100 = 18.3; cb100 = 3.4; f100 = 20.8;
-    } else if (name.contains('veg')) {
-      c100 = 65.0; p100 = 2.6; cb100 = 11.2; f100 = 1.2;
-    } else if (name.contains('salad')) {
-      c100 = 22.0; p100 = 0.9; cb100 = 4.2; f100 = 0.2;
-    } else if (name.contains('roti')) {
-      c100 = 264.0; p100 = 9.1; cb100 = 46.2; f100 = 3.7;
-    } else if (name.contains('idli')) {
-      c100 = 140.0; p100 = 4.5; cb100 = 26.0; f100 = 1.8;
+    // 2. Fallback to name-based lookup if per-100g values were not set
+    if (c100 <= 0.0) {
+      final name = comp.name.toLowerCase();
+      c100 = 120.0; p100 = 4.0; cb100 = 18.0; f100 = 3.5;
+      if (name.contains('papaya')) {
+        c100 = 43.0; p100 = 0.5; cb100 = 10.8; f100 = 0.3;
+      } else if (name.contains('cucumber')) {
+        c100 = 15.0; p100 = 0.7; cb100 = 3.6; f100 = 0.1;
+      } else if (name.contains('watermelon') || name.contains('melon')) {
+        c100 = 30.0; p100 = 0.6; cb100 = 7.6; f100 = 0.2;
+      } else if (name.contains('apple')) {
+        c100 = 52.0; p100 = 0.3; cb100 = 13.8; f100 = 0.2;
+      } else if (name.contains('banana')) {
+        c100 = 89.0; p100 = 1.1; cb100 = 22.8; f100 = 0.3;
+      } else if (name.contains('rice')) {
+        c100 = 130.0; p100 = 2.7; cb100 = 28.2; f100 = 0.3;
+      } else if (name.contains('dal')) {
+        c100 = 125.0; p100 = 6.8; cb100 = 18.0; f100 = 2.9;
+      } else if (name.contains('paneer')) {
+        c100 = 268.0; p100 = 18.3; cb100 = 3.4; f100 = 20.8;
+      } else if (name.contains('veg')) {
+        c100 = 65.0; p100 = 2.6; cb100 = 11.2; f100 = 1.2;
+      } else if (name.contains('salad')) {
+        c100 = 22.0; p100 = 0.9; cb100 = 4.2; f100 = 0.2;
+      } else if (name.contains('roti') || name.contains('chapati')) {
+        c100 = 264.0; p100 = 9.1; cb100 = 46.2; f100 = 3.7;
+      } else if (name.contains('idli')) {
+        c100 = 140.0; p100 = 4.5; cb100 = 26.0; f100 = 1.8;
+      }
     }
 
     comp.caloriesKcal = (c100 * factor).round();
@@ -527,20 +550,20 @@ class DiniecoProvider extends ChangeNotifier {
       // 2. Pass normalized JPEG base64 (or fallback to original bytes) to vision analyzer
       final base64Str = normalizedB64 ?? base64Encode(bytes);
 
-      // 3. Analyze image with weight
+      // 3. Analyze image with weight - do not bias dish hint with old preset
       final weightToUse = _currentWeightG > 0 ? _currentWeightG : 500.0;
       final visionData = await apiService.analyzeFoodVision(
         padWeight: weightToUse,
         weightSource: _weightSource,
         tareWeightG: _weightSource == 'device' ? _tareWeightG : 0.0,
-        dishHint: _currentDishName.isNotEmpty ? _currentDishName : null,
+        dishHint: null,
         imageBase64: base64Str,
       );
 
       _currentDishName = visionData['dish_name'] as String;
       _currentConfidence = visionData['confidence'] as double;
       _currentWeightG = visionData['total_weight_g'] as double;
-      _aiModel = visionData['ai_model'] as String? ?? 'gemini-3.8-flash';
+      _aiModel = visionData['ai_model'] as String? ?? 'gemini-3.1-flash-lite';
       _aiVerified = visionData['ai_verified'] as bool? ?? true;
       _detectedComponents = List<FoodComponentItem>.from(visionData['components'] as List);
 
@@ -566,14 +589,14 @@ class DiniecoProvider extends ChangeNotifier {
         padWeight: weightToUse,
         weightSource: _weightSource,
         tareWeightG: _weightSource == 'device' ? _tareWeightG : 0.0,
-        dishHint: dishHint ?? (_currentDishName.isNotEmpty ? _currentDishName : 'Vegetable Rice Bowl'),
+        dishHint: dishHint ?? (_currentDishName.isNotEmpty ? _currentDishName : null),
         imageBase64: imageBase64,
       );
 
       _currentDishName = visionData['dish_name'] as String;
       _currentConfidence = visionData['confidence'] as double;
       _currentWeightG = visionData['total_weight_g'] as double;
-      _aiModel = visionData['ai_model'] as String? ?? 'gemini-2.5-flash';
+      _aiModel = visionData['ai_model'] as String? ?? 'gemini-3.1-flash-lite';
       _aiVerified = visionData['ai_verified'] as bool? ?? false;
       _detectedComponents = List<FoodComponentItem>.from(visionData['components'] as List);
     } catch (_) {
